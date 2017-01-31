@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './reducers'
+import rootReducer from './reducers';
 
 import App from './containers/App';
 import MovieContainer from './containers/MovieContainer';
 
-const store = createStore(rootReducer)
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const store = createStore(rootReducer, devTools)
 
 const router = (
   <Provider store={store}>
-    <Router history={browserHistory} >
+    <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
       </Route>
