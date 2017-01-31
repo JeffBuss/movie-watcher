@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 
-import App from './containers/app/App';
+import App from './containers/appContainer/AppContainer';
 import MovieContainer from './containers/movieContainer/MovieContainer';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

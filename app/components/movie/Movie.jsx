@@ -9,8 +9,8 @@ const Movie = (props) => {
     <div>
       <button id='fav'
               onClick={() => {
-        props.handleClick(movie)
-      }}>
+                props.handleClick(movie)
+              }}>
         FAV!
       </button>
     </div>

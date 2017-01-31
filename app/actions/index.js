@@ -4,3 +4,10 @@ export const addToFavorites = (movie) => {
     movie
   }
 }
+
+export const loadTheaters = (movies) => {
+  return {
+    type: 'LOAD_THEATERS',
+    movies
+  }
+}
