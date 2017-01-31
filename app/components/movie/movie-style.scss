@@ -4,10 +4,11 @@
   width: 40px;
   height: 40px;
   background-color: pink;
-  color: yellow;
+  color: purple;
   border-radius: 50%;
   &:hover {
     cursor: pointer;
     background-color: purple;
+    color: pink;
   }
 }
