@@ -15,7 +15,7 @@ module.exports = {
    module: {
      loaders: [{
        test: /.jsx?$/,
-       loader: 'babel-loader',
+       loader: 'babel',
        include: path.join(__dirname, 'app'),
        exclude: /node_modules/,
        query: {
