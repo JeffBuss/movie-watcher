@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './movie-style';
 
-const Movie = () => {
+const Movie = (props) => {
   let movie = { title: 'Cool Runnings', rating: 'PG', release: '1991'}
+
 
   return (
     <div>
       <button id='fav'
               onClick={() => {
-        handleClick(movie)
+        props.handleClick(movie)
       }}>
         FAV!
       </button>
