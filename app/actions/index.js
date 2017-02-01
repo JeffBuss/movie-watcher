@@ -13,6 +13,13 @@ export const loadTheaters = (movies) => {
   }
 }
 
+export const signInUser = (user) => {
+  return {
+    type: "SIGN_IN_USER",
+    user
+  }
+}
+
 export const setFilter = (filter) => {
   return {
     type: 'SET_FILTER',
