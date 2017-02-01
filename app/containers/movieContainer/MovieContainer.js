@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToFavorites } from '../../actions';
-import Movie from '../../components/movie/Movie';
+import MovieList from '../../components/movieList/MovieList';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick: (movie) => {
-      dispatch(addToFavorites(movie))
-    }
-  }
-}
+      dispatch(addToFavorites(movie));
+    },
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
-    favorites: state.favoritesReducer
-  }
-}
+    favorites: state.favoritesReducer,
+    movies: state.theatersReducer,
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Movie)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList)

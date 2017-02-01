@@ -8,18 +8,19 @@ import rootReducer from './reducers/index';
 import App from './containers/appContainer/AppContainer';
 import MovieContainer from './containers/movieContainer/MovieContainer';
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const store = createStore(rootReducer, devTools)
+const store = createStore(rootReducer, devTools);
 
 const router = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
+        <Route path='/movies' component={MovieContainer} />
       </Route>
     </Router>
   </Provider>
-)
+);
 
-ReactDOM.render(router, document.getElementById('main'))
+ReactDOM.render(router, document.getElementById('main'));

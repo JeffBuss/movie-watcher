@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <div>
       <button onClick={() => {
-                console.log(signIn)
+                console.log('signIn')
               }}>
         SIGN IN
       </button>
