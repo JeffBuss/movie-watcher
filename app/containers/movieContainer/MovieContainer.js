@@ -12,9 +12,19 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
+
+  const currentFilter = () => {
+    switch(state.filterReducer) {
+      case 'SHOW_FAVORITES':
+        return state.favoritesReducer;
+      default:
+        return state.theatersReducer
+    }
+  }
+
   return {
     favorites: state.favoritesReducer,
-    movies: state.theatersReducer,
+    movies: currentFilter(),
   };
 };
 
