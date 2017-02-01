@@ -8,6 +8,7 @@ const MovieList = (props) => {
   const movies = props.movies.map(obj => {
     return (
       <MovieCard
+        handleClick={props.handleClick}
         key={obj.id}
         {...obj}
       />
