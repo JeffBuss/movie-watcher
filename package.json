@@ -1,3 +1,5 @@
+
+
 {
   "name": "example-api",
   "version": "1.0.0",
@@ -5,7 +7,7 @@
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
     "dev-server": "webpack-dev-server --hot --inline --content-base --history-api-fallback",
-    "start": "npm build && node src/app.js",
+    "start": "npm build && node src/app.js && --history-api-fallback",
     "test": "mocha -w --compilers js:babel-core/register --require helpers/test-setup.js app/**/*.test.jsx"
   },
   "keywords": [],
