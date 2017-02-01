@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './movie-style';
 
-const Movie = (props) => {
+const MovieList = (props) => {
   let movie = { title: 'Cool Runnings', rating: 'PG', release: '1991'}
 
 
@@ -17,4 +17,4 @@ const Movie = (props) => {
   )
 }
 
-export default Movie;
+export default MovieList;
