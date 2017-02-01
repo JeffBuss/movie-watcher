@@ -8,4 +8,4 @@ const theaters = (state=[], action) => {
   }
 }
 
-export default theaters
+export default theaters;

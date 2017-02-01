@@ -9,12 +9,12 @@ const MovieCard = (props) => {
       <p>{props.release_date}</p>
       <button id='fav'
               onClick={() => {
-                props.handleClick(movie)
+                props.handleClick(props);
               }}>
         FAV!
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default MovieCard;

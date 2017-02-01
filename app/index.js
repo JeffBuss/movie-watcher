@@ -17,6 +17,7 @@ const router = (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
+        <Route path='/movies' component={MovieContainer} />
       </Route>
     </Router>
   </Provider>
