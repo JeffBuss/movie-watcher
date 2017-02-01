@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 // import { signIn } from '../../../src/queries';
 
 const Header = (props) => {
   return (
     <div>
+      <button onClick={() => {
+                props.filter('SHOW_ALL')
+              }}>
+        <Link to='/'>LOGO</Link>
+      </button>
       <button onClick={() => {
                 console.log('signIn')
               }}>
@@ -11,9 +17,9 @@ const Header = (props) => {
       </button>
       <button id='set-filter-btn'
               onClick={() => {
-                props.showFavorites('SHOW_FAVORITES')
+                props.filter('SHOW_FAVORITES')
               }}>
-        FAVORITES
+        <Link to='movies/favorites'>FAVORITES</Link>
       </button>
     </div>
   )

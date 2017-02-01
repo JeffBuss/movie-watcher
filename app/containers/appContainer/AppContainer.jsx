@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchMovies: (movies) => {
       dispatch(loadTheaters(movies))
     },
-    showFavorites: (filter) => {
+    filter: (filter) => {
       dispatch(setFilter(filter))
     }
   }

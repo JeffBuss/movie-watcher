@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header showFavorites={this.props.showFavorites}/>
+        <Header filter={this.props.filter}/>
         {this.props.children}
       </div>
     )
