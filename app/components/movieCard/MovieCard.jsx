@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 const MovieCard = (props) => {
 
   const favoriteBtn = () => {
-    console.log('fml')
     if(props.user) {
     return (
       <button id='fav'
@@ -15,7 +14,6 @@ const MovieCard = (props) => {
       </button>
     )}
   }
-
 
   return (
     <div>
