@@ -8,7 +8,7 @@ export const addToFavorites = (movie) => {
 export const loadTheaters = (movies) => {
   // console.log('2')
   return {
-    type: 'LOAD_THEATERS',
+    type: 'LOAD_MOVIES',
     movies
   }
 }
