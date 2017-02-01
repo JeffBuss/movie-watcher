@@ -9,6 +9,12 @@ const Header = (props) => {
               }}>
         SIGN IN
       </button>
+      <button id='set-filter-btn'
+              onClick={() => {
+                props.showFavorites('SHOW_FAVORITES')
+              }}>
+        FAVORITES
+      </button>
     </div>
   )
 }

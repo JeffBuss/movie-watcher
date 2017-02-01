@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { loadTheaters } from '../../actions';
 import Header from '../header/Header';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header showFavorites={this.props.showFavorites}/>
         {this.props.children}
       </div>
     )
