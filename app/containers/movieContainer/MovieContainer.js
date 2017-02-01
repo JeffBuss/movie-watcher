@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToFavorites } from '../../actions';
-import MovieList from '../../components/movie/MovieList';
+import MovieList from '../../components/movieList/MovieList';
 
 const mapDispatchToProps = (dispatch) => {
  return {

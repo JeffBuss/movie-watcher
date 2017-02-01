@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './movie-style';
+import './movieCard-style';
 
-const MovieList = (props) => {
-  let movie = { title: 'Cool Runnings', rating: 'PG', release: '1991'}
-
+const MovieCard = (props) => {
 
   return (
     <div>
+      <h1>{props.title}</h1>
+      <p>{props.release_date}</p>
       <button id='fav'
               onClick={() => {
                 props.handleClick(movie)
@@ -17,4 +17,4 @@ const MovieList = (props) => {
   )
 }
 
-export default MovieList;
+export default MovieCard;
