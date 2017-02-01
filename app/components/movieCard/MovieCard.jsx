@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './movieCard-style';
+// import './movieCard-style';
 
 const MovieCard = (props) => {
 

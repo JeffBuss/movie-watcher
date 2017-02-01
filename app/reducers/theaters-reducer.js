@@ -1,11 +1,11 @@
-const theaters = (state=[], action) => {
+const theaters = (state = [], action) => {
   // console.log('3')
-  switch(action.type) {
+  switch (action.type) {
     case 'LOAD_THEATERS':
-      return [action.movies];
+      return action.movies;
     default:
       return state;
   }
-}
+};
 
 export default theaters;
