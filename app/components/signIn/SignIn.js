@@ -10,7 +10,8 @@ class SignIn extends React.Component {
   }
 
   signIn(){
-    const { email, password } = this.state
+    const { email, password } = this.state;
+    
     fetch("/api/users", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -24,10 +25,9 @@ class SignIn extends React.Component {
   userCheck(){
     const { user } = this.props;
     const { email, password } = this.state;
+
     if(user) {
-      return (
-          <p>Welcome {user.name}!</p>
-      )
+      return <p>Welcome {user.name}!</p>
     } else {
       return (
         <div>
