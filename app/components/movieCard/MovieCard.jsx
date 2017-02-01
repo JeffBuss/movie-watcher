@@ -3,16 +3,25 @@ import React, { Component } from 'react';
 
 const MovieCard = (props) => {
 
+  const favoriteBtn = () => {
+    console.log('fml')
+    if(props.user) {
+    return (
+      <button id='fav'
+        onClick={() => {
+          props.handleClick(props);
+        }}>
+        FAV!
+      </button>
+    )}
+  }
+
+
   return (
     <div>
       <h1>{props.title}</h1>
       <p>{props.release_date}</p>
-      <button id='fav'
-              onClick={() => {
-                props.handleClick(props);
-              }}>
-        FAV!
-      </button>
+      {favoriteBtn()}
     </div>
   );
 };

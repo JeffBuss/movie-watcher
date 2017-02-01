@@ -10,6 +10,7 @@ const MovieList = (props) => {
       <MovieCard
         handleClick={props.handleClick}
         key={obj.id}
+        user={props.user}
         {...obj}
       />
     );
