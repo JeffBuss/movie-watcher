@@ -1,4 +1,4 @@
-const theaters = (state = [], action) => {
+const movies = (state = [], action) => {
   // console.log('3')
   switch (action.type) {
     case 'LOAD_THEATERS':
@@ -8,4 +8,4 @@ const theaters = (state = [], action) => {
   }
 };
 
-export default theaters;
+export default movies;

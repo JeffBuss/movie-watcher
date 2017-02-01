@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   // console.log('4')
   return {
-    movies: state.theatersReducer
+    
   }
 }
 

@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
       case 'SHOW_FAVORITES':
         return state.favoritesReducer;
       default:
-        return state.theatersReducer
+        return state.moviesReducer
     }
   }
 
