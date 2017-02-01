@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-// import { signIn } from '../../../src/queries';
+import SignIn from "../../containers/signInContainer/SignInContainer";
 
 const Header = (props) => {
   return (
     <div>
-      <button onClick={() => {
-                console.log('signIn')
-              }}>
-        SIGN IN
-      </button>
+      <SignIn />
     </div>
   )
 }
