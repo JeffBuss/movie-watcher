@@ -11,10 +11,12 @@ const Header = (props) => {
         <Link to='/'>LOGO</Link>
       </button>
 
-      <button id='set-filter-btn'
-              onClick={() => props.filter('SHOW_FAVORITES')}>
-        <Link to='movies/favorites'>FAVORITES</Link>
-      </button>
+      <Link to='/favorites'>
+        <button id='set-filter-btn'
+                onClick={() => props.filter('SHOW_FAVORITES')}>
+          FAVORITES
+        </button>
+      </Link>
     </div>
   )
 }
