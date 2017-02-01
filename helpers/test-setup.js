@@ -1,4 +1,8 @@
-require('babel-register')();
+require('babel-register')({
+  presets: ['react', 'es2015']
+});
+
+require('babel-polyfill');
 
 // HELP MOCHA HANDLE CSS MODULES
 
