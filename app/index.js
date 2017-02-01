@@ -20,8 +20,7 @@ const router = (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
-        <Route path='/movies' component={MovieContainer} />
-        <Route path='/movies/favorites' component={MovieContainer} />
+        <Route path='/favorites' component={MovieContainer} />
       </Route>
     </Router>
   </Provider>
