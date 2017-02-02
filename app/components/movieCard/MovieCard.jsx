@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 // import './movieCard-style';
 
 const MovieCard = (props) => {
-
-  const addFavToApi = () => {
-    const {id, user, title, poster_path,
-           release_date, vote_average, overview} = props;
-    let favCheck = false;
-
-    props.favorites.forEach(movie => {
-      if(movie.title === props.title)
-        return favCheck = true;
+  const getMatchedFavID = (props) => {
+    let match = null;
+    props.favorites.forEach(fav => {
+      if(fav.title === props.title)
+        match = fav.movie_id || fav.id;
     })
+    return match;
+  }
 
-    if(!favCheck){
+  const addFavToApi = (props) => {
+    const {id, user, title, poster_path,
+           release_date, vote_average,
+           overview} = props;
+
+    const favID = getMatchedFavID(props);
+
+    if(!favID){
       fetch('api/users/favorites/new', {
         method: 'POST',
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({
           movie_id: id,
-          user_id: user,
+          user_id: user.id,
           title: title,
           poster_path: poster_path,
           release_date: release_date,
@@ -28,14 +33,8 @@ const MovieCard = (props) => {
         })
         .then(() => props.addFav(props))
       } else {
-        let favID = null;
 
-        props.favorites.forEach(fav => {
-          if(fav.title == props.title)
-            favID = fav.movie_id || fav.id;
-        })
-
-        fetch(`api/users/${user}/favorites/${favID}`, {
+        fetch(`api/users/${user.id}/favorites/${favID}`, {
           method: "DELETE",
           headers: {'Content-Type' : 'application/json'},
         })
@@ -44,13 +43,20 @@ const MovieCard = (props) => {
       }
   }
 
-  const favoriteBtn = () => {
+  const favCheck = () => {
+    let favorited = "";
+    props.favorites.forEach(fav => {
+      if(fav.title === props.title)
+        favorited = "favorite"
+    })
+    return favorited;
+  }
+
+  const favoriteBtn = (props) => {
     if(props.user) {
     return (
-      <button id='fav'
-        onClick={() => {
-          addFavToApi();
-        }}>
+      <button className={"fav " + favCheck()}
+        onClick={() => addFavToApi(props)}>
         FAV!
       </button>
     )}
@@ -60,7 +66,7 @@ const MovieCard = (props) => {
     <div>
       <h1>{props.title}</h1>
       <p>{props.release_date}</p>
-      {favoriteBtn()}
+      {favoriteBtn(props)}
     </div>
   );
 };

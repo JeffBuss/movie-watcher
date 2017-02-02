@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './movieList-style';
-import MovieCard from '../movieCard/MovieCard';
+import MovieCard from '../../containers/movieContainer/MovieContainer';
 
 const MovieList = (props) => {
 
-  const noUser = <p>Please sign in to view and add to your favorites. <br/> Or sign up here!</p>;
+  const noUser = <p>Please sign in to view and add to your favorites.
+                    <br/> Or sign up here!</p>;
   const noFavorites = <p>No favorites.</p>
   const path = props.router.location.pathname;
 
   const pathCheck = () => {
     switch (path) {
       case "/favorites":
-        return !props.user ? noUser :
-            props.favorites.length ? movies : noFavorites;
+        return !props.user ?
+          noUser : props.favorites.length ?
+              movies : noFavorites;
       default:
         return movies;
     }
@@ -20,13 +22,7 @@ const MovieList = (props) => {
 
   const movies = props.movies.map(obj => {
     return (
-      <MovieCard
-        addFav={props.addFav}
-        removeFav={props.removeFav}
-        key={obj.id}
-        user={props.user ? props.user.id : null}
-        favorites={props.favorites}
-        {...obj} />
+      <MovieCard key={obj.id} {...obj} />
     );
   });
 

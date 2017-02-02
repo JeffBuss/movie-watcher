@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
   return {
     favorites: state.favoritesReducer,
     movies: state.favoritesReducer,
-    user: state.userReducer,
+    user: state.userReducer
   };
 };
 

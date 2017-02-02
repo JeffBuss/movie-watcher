@@ -7,7 +7,7 @@ import rootReducer from './reducers/index';
 // import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from './containers/appContainer/AppContainer';
-import MovieContainer from './containers/movieContainer/MovieContainer';
+import MovieListContainer from './containers/movieListContainer/MovieListContainer';
 import SignUpContainer from './containers/signUpContainer/SignUpContainer';
 import FavoritesContainer from "./containers/favoritesContainer/FavoritesContainer";
 
@@ -21,7 +21,7 @@ const router = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={App}>
-        <IndexRoute component={MovieContainer} />
+        <IndexRoute component={MovieListContainer} />
         <Route path='/join' component={SignUpContainer} />
         <Route path='/favorites' component={FavoritesContainer} />
       </Route>

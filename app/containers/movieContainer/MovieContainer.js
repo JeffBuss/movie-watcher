@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToFavorites, removeFavorites } from '../../actions';
-import MovieList from '../../components/movieList/MovieList';
+import MovieCard from '../../components/movieCard/MovieCard';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -17,9 +17,9 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     favorites: state.favoritesReducer,
-    movies: state.moviesReducer,
+    movies: state.movieListReducer,
     user: state.userReducer
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)
