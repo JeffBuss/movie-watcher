@@ -7,4 +7,6 @@ const favorites = (state=[], action) => {
   }
 }
 
+
+
 export default favorites

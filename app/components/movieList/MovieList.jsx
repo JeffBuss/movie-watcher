@@ -4,15 +4,13 @@ import MovieCard from '../movieCard/MovieCard'
 
 
 const MovieList = (props) => {
-  // console.log(props.movies);
   const movies = props.movies.map(obj => {
     return (
       <MovieCard
         handleClick={props.handleClick}
         key={obj.id}
-        user={props.user}
-        {...obj}
-      />
+        user={props.user ? props.user.id : null}
+        {...obj} />
     );
   });
 
