@@ -8,7 +8,8 @@ const MovieList = (props) => {
 
     return (
       <MovieCard
-        handleClick={props.handleClick}
+        addFav={props.addFav}
+        removeFav={props.removeFav}
         key={obj.id}
         user={props.user ? props.user.id : null}
         favorites={props.favorites}

@@ -13,10 +13,10 @@ const MovieCard = (props) => {
         return favCheck = true;
     })
 
-    if(!favCheck)
+    if(!favCheck){
       fetch('api/users/favorites/new', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({
           movie_id: id,
           user_id: user,
@@ -26,7 +26,22 @@ const MovieCard = (props) => {
           vote_average: vote_average,
           overview: overview })
         })
-        .then(() => props.handleClick(props))
+        .then(() => props.addFav(props))
+      } else {
+        let favID = null;
+
+        props.favorites.forEach(fav => {
+          if(fav.title == props.title)
+            favID = fav.movie_id || fav.id;
+        })
+
+        fetch(`api/users/${user}/favorites/${favID}`, {
+          method: "DELETE",
+          headers: {'Content-Type' : 'application/json'},
+        })
+          .then(() => props.removeFav(props))
+          .catch(err => alert(err))
+      }
   }
 
   const favoriteBtn = () => {
