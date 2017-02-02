@@ -19,6 +19,9 @@ class SignIn extends React.Component {
     })
     .then(res => res.json())
     .then(user => this.props.signInClick(user.data))
+    .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
+      .then(res => res.json())
+      .then(favs => this.props.getFavorites(favs.data)))
     .catch(err => alert("Invalid Email/Password."))
   }
 

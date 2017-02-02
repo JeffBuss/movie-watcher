@@ -26,3 +26,10 @@ export const setFilter = (filter) => {
     filter,
   }
 }
+
+export const removeFavorites = (movie) => {
+  return {
+    type: "REMOVE_FAVORITES",
+    movie
+  }
+}
