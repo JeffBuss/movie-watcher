@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import './movieCard-style';
 
 const MovieCard = (props) => {
-  const favoritesCheck = (props) => {
+  const getMatchedFavID = (props) => {
     let match = null;
     props.favorites.forEach(fav => {
       if(fav.title === props.title)
@@ -16,7 +16,7 @@ const MovieCard = (props) => {
            release_date, vote_average,
            overview} = props;
 
-    const favID = favoritesCheck(props);
+    const favID = getMatchedFavID(props);
 
     if(!favID){
       fetch('api/users/favorites/new', {
@@ -43,10 +43,19 @@ const MovieCard = (props) => {
       }
   }
 
+  const favCheck = () => {
+    let favorited = "";
+    props.favorites.forEach(fav => {
+      if(fav.title === props.title)
+        favorited = "favorite"
+    })
+    return favorited;
+  }
+
   const favoriteBtn = (props) => {
     if(props.user) {
     return (
-      <button id='fav'
+      <button className={"fav " + favCheck()}
         onClick={() => addFavToApi(props)}>
         FAV!
       </button>
