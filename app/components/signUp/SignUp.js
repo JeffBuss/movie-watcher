@@ -34,15 +34,18 @@ class SignUp extends React.Component {
       <div>
         <form id='sign-up-form'>
           <input placeholder='Name'
-                 onChange={(e) => this.setState({ name: e.target.value })}/>
+                 onChange={(e) => this.setState({ name: e.target.value })}
+                 className='name-input'/>
 
           <input placeholder='Email'
-                 onChange={(e) => this.setState({ email: e.target.value })}/>
+                 onChange={(e) => this.setState({ email: e.target.value })}
+                 className='email input'/>
 
           <input placeholder='Password'
-                 onChange={(e) => this.setState({ password: e.target.value })}/>
+                 onChange={(e) => this.setState({ password: e.target.value })}
+                 className='email input'/>
 
-          <button onClick={(e) => {
+          <button className='btn' onClick={(e) => {
             e.preventDefault();
             this.addNewUser()
           }}>

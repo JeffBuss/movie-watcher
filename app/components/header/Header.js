@@ -23,22 +23,22 @@ const Header = (props) => {
   }
 
   return (
-    <div>
-      <SignIn />
-
-      <button>
-        <Link to='/'>LOGO</Link>
+    <div className='header'>
+      <button
+        className='logo-btn'>
+        <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
       </button>
 
+      <SignIn />
+
       <Link to='/favorites'>
-        <button>
-          FAVORITES
+        <button
+          className='show-fav-btn btn'
+          id='set-filter-btn'>
+          Favorites
         </button>
       </Link>
-
       {signUp()}
-
-
     </div>
   )
 }

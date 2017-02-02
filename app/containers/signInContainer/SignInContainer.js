@@ -10,7 +10,11 @@ const mapDispatchToProps = (dispatch) => {
     },
     getFavorites: (favs) => {
       favs.forEach(fav => dispatch(addToFavorites(fav)))
-    }
+    },
+    addToLocalStorage: (user) => {
+      user = JSON.stringify(user)
+      localStorage.setItem('user', user)
+    },
   };
 };
 
