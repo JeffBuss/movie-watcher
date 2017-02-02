@@ -12,16 +12,22 @@ class SignUp extends React.Component {
   }
 
   addNewUser() {
-    let { name, email, password } = this.state
-
-    fetch('/api/users/new', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-      body:JSON.stringify({ name, email, password })
-    })
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }
+  let { name, email, password } = this.state
+  fetch('/api/users/new', {
+    method: 'POST',
+    headers: {"Content-Type": "application/json"},
+    body:JSON.stringify({ name, email, password })
+  })
+  .then(() =>
+  fetch("/api/users", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({email, password})
+  })
+  .then(res => res.json())
+  .then(user => this.props.signInClick(user.data)))
+  .catch(err => alert("Email already in use."))
+}
 
   render(){
     return(
