@@ -20,9 +20,9 @@ export const signInUser = (user) => {
   }
 }
 
-export const setFilter = (filter) => {
+export const removeFavorites = (movie) => {
   return {
-    type: 'SET_FILTER',
-    filter,
+    type: "REMOVE_FAVORITES",
+    movie
   }
 }
