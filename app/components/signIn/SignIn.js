@@ -30,22 +30,22 @@ class SignIn extends React.Component {
     const { email, password } = this.state;
 
     if(user) {
-      return <p>Welcome, {user.name}!</p>
+      return <p className='welcome'>Welcome, {user.name}!</p>
     } else {
       return (
         <div>
-          <input className="email"
+          <input className="email input"
                  placeholder="Email"
                  value={email}
                  onChange={e => this.setState({email: e.target.value})}/>
 
-          <input className="password"
+          <input className="password input"
                  type="password"
                  placeholder="Password"
                  value={password}
                  onChange={e => this.setState({password: e.target.value})}/>
 
-          <button className="signin-btn"
+          <button className="signin-btn btn"
                   onClick={() => this.signIn()}>
             Sign In
           </button>
@@ -56,7 +56,7 @@ class SignIn extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className='signin'>
         {this.userCheck()}
       </div>
     )

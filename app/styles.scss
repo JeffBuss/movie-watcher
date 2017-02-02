@@ -1,0 +1,85 @@
+// variables
+
+$sansFont: 'Fjalla One', sans-serif;
+$serifFont: 'Average', serif;
+$lightBG: #fafafa;
+$medBG: #bababa;
+$darkBG: #5a5a5a;
+
+// mixins
+
+@mixin buttonStyles {
+  &:hover {
+        cursor: pointer;
+        background-color: $lightBG;
+    }
+  &:focus{
+    outline: none;
+  }
+  background-color: $darkBG;
+  border-radius: 5px;
+  border-style: none;
+  margin: .5vw;
+}
+
+@mixin inputStyles {
+  margin: .5vw;
+  border-radius: 5px;
+}
+
+// global
+body {
+  background-color: $lightBG;
+}
+
+.btn {
+  @include buttonStyles;
+}
+
+.input {
+  @include inputStyles;
+}
+
+// header
+
+.header {
+  font-family: $sansFont;
+  background: $medBG;
+  height: 25vh;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1vmax;
+}
+
+.logo {
+  
+}
+
+// moviecard
+
+.movie-card {
+  background-color: $medBG;
+  color: white;
+  padding: 15px;
+  margin: 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-grow: 1;
+  max-width: 25%;
+}
+
+.movie-title {
+  display: flex;
+}
+
+// movielist
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// signin

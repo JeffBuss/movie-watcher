@@ -47,7 +47,9 @@ const MovieCard = (props) => {
   const favoriteBtn = () => {
     if(props.user) {
     return (
-      <button id='fav'
+      <button
+        className='add-fav-btn btn'
+        id='fav'
         onClick={() => {
           addFavToApi();
         }}>
@@ -57,9 +59,9 @@ const MovieCard = (props) => {
   }
 
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <p>{props.release_date}</p>
+    <div className='movie-card'>
+      <h1 className='movie-title'>{props.title}</h1>
+      <p className='movie-release'>{props.release_date}</p>
       {favoriteBtn()}
     </div>
   );

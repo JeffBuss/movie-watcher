@@ -6,6 +6,9 @@ import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 // import { syncHistoryWithStore } from 'react-router-redux';
 
+import './reset'
+import './styles';
+
 import App from './containers/appContainer/AppContainer';
 import MovieContainer from './containers/movieContainer/MovieContainer';
 
