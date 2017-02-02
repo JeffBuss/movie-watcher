@@ -17,18 +17,9 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     favorites: state.favoritesReducer,
-    movies: currentFilter(state),
+    movies: state.moviesReducer,
     user: state.userReducer
   };
 };
-
-const currentFilter = (state) => {
-  switch(state.filterReducer) {
-    case 'SHOW_FAVORITES':
-    return state.favoritesReducer;
-    default:
-    return state.moviesReducer
-  }
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList)

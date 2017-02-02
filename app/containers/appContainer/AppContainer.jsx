@@ -9,9 +9,6 @@ const mapDispatchToProps = (dispatch) => {
     fetchMovies: (movies) => {
       dispatch(loadTheaters(movies))
     },
-    filter: (filter) => {
-      dispatch(setFilter(filter))
-    }
   }
 }
 

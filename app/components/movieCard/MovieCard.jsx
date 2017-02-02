@@ -40,7 +40,7 @@ const MovieCard = (props) => {
           headers: {'Content-Type' : 'application/json'},
         })
           .then(() => props.removeFav(props))
-          .catch(err => alert(err))
+          .catch(err => console.log(err))
       }
   }
 

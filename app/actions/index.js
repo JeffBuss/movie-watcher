@@ -20,13 +20,6 @@ export const signInUser = (user) => {
   }
 }
 
-export const setFilter = (filter) => {
-  return {
-    type: 'SET_FILTER',
-    filter,
-  }
-}
-
 export const removeFavorites = (movie) => {
   return {
     type: "REMOVE_FAVORITES",
