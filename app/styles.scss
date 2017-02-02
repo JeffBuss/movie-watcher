@@ -70,15 +70,17 @@ body {
 
 .fav {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 4vw;
+  bottom: 2vh;
   z-index: 2;
   border: none;
   outline: none;
   width: 40px;
   height: 40px;
-  background-color: pink;
-  color: purple;
+  background-color: rgba(0,0,0,0);
+  color: $medBG;
+  text-shadow: 0px 0px 10px $medBG;
+  font-size: 2vw;
   border-radius: 50%;
   &:hover {
     cursor: pointer;

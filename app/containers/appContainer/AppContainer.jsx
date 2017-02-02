@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadTheaters, setFilter } from '../../actions';
+import { loadTheaters, signInUser } from '../../actions';
 import App from '../../components/app/App';
 
 const mapDispatchToProps = (dispatch) => {
@@ -8,6 +8,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchMovies: (movies) => {
       dispatch(loadTheaters(movies))
+    },
+    getUser: (user) => {
+      dispatch(signInUser(user))
     },
   }
 }

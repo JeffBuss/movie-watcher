@@ -9,8 +9,6 @@ class SignIn extends React.Component {
     }
   }
 
-
-
   signIn() {
     const { email, password } = this.state;
 
@@ -20,7 +18,11 @@ class SignIn extends React.Component {
       body: JSON.stringify({email, password})
     })
     .then(res => res.json())
-    .then(user => this.props.signInClick(user.data))
+    .then(user => {
+      this.props.signInClick(user.data)
+      this.props.addToLocalStorage(user.data)
+    })
+
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
