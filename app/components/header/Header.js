@@ -7,9 +7,9 @@ const Header = (props) => {
     <div className='header'>
 
       <button
-        className='logo'
+        className='logo-btn'
         onClick={() => props.filter('SHOW_ALL')}>
-        <Link to='/'>Ripe Tomatoes</Link>
+        <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
       </button>
 
       <SignIn />
