@@ -32,6 +32,14 @@ const Header = (props) => {
 >>>>>>> master
         </button>
       </Link>
+
+      <Link to='/join'>
+        <button>
+          SIGN UP
+        </button>
+      </Link>
+
+
     </div>
   )
 }
