@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header user={this.props.user} />
         {this.props.children}
       </div>
     )

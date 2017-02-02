@@ -3,6 +3,25 @@ import SignIn from "../../containers/signInContainer/SignInContainer";
 import { Link } from 'react-router'
 
 const Header = (props) => {
+  console.log(props);
+
+  const signUp = () => {
+    if(!props.user){
+      return (
+        <Link to='/join'>
+        <button>
+          SIGN UP
+        </button>
+      </Link>
+      )
+    } else {
+      return (
+        <button>Sign Out</button>
+      )
+    }
+
+  }
+
   return (
     <div>
       <SignIn />
@@ -17,11 +36,7 @@ const Header = (props) => {
         </button>
       </Link>
 
-      <Link to='/join'>
-        <button>
-          SIGN UP
-        </button>
-      </Link>
+      {signUp()}
 
 
     </div>

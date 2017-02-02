@@ -11,6 +11,8 @@ import MovieListContainer from './containers/movieListContainer/MovieListContain
 import SignUpContainer from './containers/signUpContainer/SignUpContainer';
 import FavoritesContainer from "./containers/favoritesContainer/FavoritesContainer";
 
+// import SignUp from "./components/signUp/SignUp";
+
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 //syncWithStore
