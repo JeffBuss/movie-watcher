@@ -13,6 +13,7 @@ import App from './containers/appContainer/AppContainer';
 import MovieListContainer from './containers/movieListContainer/MovieListContainer';
 import SignUpContainer from './containers/signUpContainer/SignUpContainer';
 import FavoritesContainer from "./containers/favoritesContainer/FavoritesContainer";
+import MovieDetailContainer from './containers/movieDetailContainer/MovieDetailContainer';
 
 // import SignUp from "./components/signUp/SignUp";
 
@@ -29,6 +30,7 @@ const router = (
         <IndexRoute component={MovieListContainer} />
         <Route path='/join' component={SignUpContainer} />
         <Route path='/favorites' component={FavoritesContainer} />
+        <Route path='/movies/:movie_title' component={MovieDetailContainer} />
       </Route>
     </Router>
   </Provider>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 // import './movieCard-style';
 
 const MovieCard = (props) => {
@@ -67,7 +68,10 @@ const MovieCard = (props) => {
       {/* <h1 className='movie-title'>{props.title}</h1> */}
       {/* <p className='movie-release'>{props.release_date}</p> */}
       {favoriteBtn(props)}
-      <img className='movie-poster' src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`} />
+      <Link to={`/movies/${props.title}`}>
+        <img className='movie-poster'
+        src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}/>
+      </Link>
     </div>
   );
 };
