@@ -25,8 +25,7 @@ const Header = (props) => {
   return (
     <div className='header'>
       <button
-        className='logo-btn'
-        onClick={() => props.filter('SHOW_ALL')}>
+        className='logo-btn'>
         <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
       </button>
 
@@ -35,8 +34,7 @@ const Header = (props) => {
       <Link to='/favorites'>
         <button
           className='show-fav-btn btn'
-          id='set-filter-btn'
-          onClick={() => props.filter('SHOW_FAVORITES')}>
+          id='set-filter-btn'>
           Favorites
         </button>
       </Link>
