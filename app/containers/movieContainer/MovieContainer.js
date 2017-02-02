@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addToFavorites, removeFavorites } from '../../actions';
 import MovieCard from '../../components/movieCard/MovieCard';
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFav: (movie) => {
+      dispatch(addToFavorites(movie));
+    },
+    removeFav: (movie) => {
+      dispatch(removeFavorites(movie))
+    }
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -10,4 +22,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(MovieCard)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)

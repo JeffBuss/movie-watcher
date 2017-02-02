@@ -15,7 +15,8 @@ const MovieCard = (props) => {
     const {id, user, title, poster_path,
            release_date, vote_average,
            overview} = props;
-    let favID = favoritesCheck(props);
+
+    const favID = favoritesCheck(props);
 
     if(!favID){
       fetch('api/users/favorites/new', {
