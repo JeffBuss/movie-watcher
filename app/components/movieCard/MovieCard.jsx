@@ -63,10 +63,11 @@ const MovieCard = (props) => {
   }
 
   return (
-    <div>
-      <h1 className='movie-title'>{props.title}</h1>
-      <p className='movie-release'>{props.release_date}</p>
+    <div className='movie-card'>
+      {/* <h1 className='movie-title'>{props.title}</h1> */}
+      {/* <p className='movie-release'>{props.release_date}</p> */}
       {favoriteBtn(props)}
+      <img className='movie-poster' src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`} />
     </div>
   );
 };

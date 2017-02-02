@@ -23,7 +23,7 @@ const Header = (props) => {
       </Link>
 
       <Link to='/join'>
-        <button>
+        <button className='sign-up-btn btn'>
           SIGN UP
         </button>
       </Link>

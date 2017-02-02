@@ -69,6 +69,10 @@ body {
 // moviecard
 
 .fav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   border: none;
   outline: none;
   width: 40px;
@@ -101,6 +105,7 @@ body {
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  position: relative;
   flex-grow: 1;
   max-width: 20%;
 }
