@@ -8,6 +8,7 @@ import rootReducer from './reducers/index';
 
 import App from './containers/appContainer/AppContainer';
 import MovieContainer from './containers/movieContainer/MovieContainer';
+import SignUpContainer from './containers/signUpContainer/SignUpContainer';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
@@ -21,6 +22,7 @@ const router = (
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
         <Route path='/favorites' component={MovieContainer} />
+        <Route path='/join' component={SignUpContainer} />
       </Route>
     </Router>
   </Provider>

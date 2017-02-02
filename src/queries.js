@@ -48,7 +48,7 @@ function createUser(req, res, next) {
 }
 
 function addFavorite(req, res, next) {
-  db.one('insert into favorites(movie_id, user_id, title, poster_path, release_date, vote_average, overview)' +
+  db.one('insert into favorites(id, user_id, title, poster_path, release_date, vote_average, overview)' +
   'values(${movie_id}, ${user_id}, ${title}, ${poster_path}, ${release_date}, ${vote_average}, ${overview}) returning id', req.body)
   .then(function(data) {
     res.status(200).json({ status: 'success', message: "Movie was added to favorites", id: data.id});

@@ -17,6 +17,14 @@ const Header = (props) => {
           FAVORITES
         </button>
       </Link>
+
+      <Link to='/join'>
+        <button>
+          SIGN UP
+        </button>
+      </Link>
+
+
     </div>
   )
 }
