@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header filter={this.props.filter}/>
+        <Header />
         {this.props.children}
       </div>
     )
