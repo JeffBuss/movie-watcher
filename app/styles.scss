@@ -84,18 +84,15 @@ body {
   border-radius: 50%;
   &:hover {
     cursor: pointer;
-    background-color: purple;
-    color: pink;
+    background-color: rgba(0,0,0,0);
   }
 }
 
 .favorite {
-  background: lime;
-  color: white;
+  color: red;
+  background-color: rgba(0,0,0,0);
   &:hover {
     cursor: pointer;
-    background: blue;
-    color: red;
   }
 }
 
