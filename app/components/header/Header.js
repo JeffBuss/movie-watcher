@@ -7,13 +7,12 @@ const Header = (props) => {
     <div>
       <SignIn />
 
-      <button onClick={() => props.filter('SHOW_ALL')}>
+      <button>
         <Link to='/'>LOGO</Link>
       </button>
 
       <Link to='/favorites'>
-        <button id='set-filter-btn'
-                onClick={() => props.filter('SHOW_FAVORITES')}>
+        <button>
           FAVORITES
         </button>
       </Link>

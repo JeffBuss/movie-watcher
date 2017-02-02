@@ -8,6 +8,7 @@ import rootReducer from './reducers/index';
 
 import App from './containers/appContainer/AppContainer';
 import MovieContainer from './containers/movieContainer/MovieContainer';
+import FavoritesContainer from "./containers/favoritesContainer/FavoritesContainer";
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
@@ -20,7 +21,7 @@ const router = (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={MovieContainer} />
-        <Route path='/favorites' component={MovieContainer} />
+        <Route path='/favorites' component={FavoritesContainer} />
       </Route>
     </Router>
   </Provider>
