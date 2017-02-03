@@ -5,7 +5,8 @@ class SignIn extends React.Component {
     super();
     this.state = {
       email: "tman2272@aol.com",
-      password: "password"
+      password: "password",
+      error: false
     }
   }
 
@@ -22,22 +23,19 @@ class SignIn extends React.Component {
       this.props.signInClick(user.data)
       this.props.addToLocalStorage(user.data)
     })
-
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
-    .catch(err => this.displayError(err))
+    .catch(err => this.setState({ error: true }))
   }
 
   displayError(err) {
-    console.log(err)
-    if(err) {
-      return (
-        <div>
-          <p className='login-error'>Email and/or password do not match</p>
-        </div>
-      );
-    }
+    if(err)
+    return (
+      <div>
+        <p className='login-error'>Email and/or password do not match</p>
+      </div>
+    );
   }
 
   userCheck(){
@@ -64,11 +62,10 @@ class SignIn extends React.Component {
               onClick={() => this.signIn()}>
               Sign In
             </button>
-            {this.displayError()}
+            {this.displayError(this.state.error)}
           </div>
         )
       }
-
     }
   }
 
