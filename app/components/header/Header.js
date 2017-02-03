@@ -3,42 +3,28 @@ import SignIn from "../../containers/signInContainer/SignInContainer";
 import { Link } from 'react-router'
 
 const Header = (props) => {
-  console.log(props);
-
-  const signUp = () => {
-    if(!props.user){
-      return (
-        <Link to='/join'>
-        <button>
-          SIGN UP
-        </button>
-      </Link>
-      )
-    } else {
-      return (
+  const display = () => {
+    if(props.user){
+      return(<div>
+        <Link to='/favorites'><button>FAVORITES</button></Link>
         <button>Sign Out</button>
-      )
-    }
-
+      </div>)
+    } else if(props.pathname !== "/join") {
+      return (
+        <div>
+          <Link to='/favorites'><button>FAVORITES</button></Link>
+          <Link to='/join'><button>SIGN UP</button></Link>
+        </div>)
+    } 
   }
 
   return (
-    <div className='header'>
-      <button
-        className='logo-btn'>
-        <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
+    <div>
+      <SignIn pathname={props.pathname}/>
+      <button>
+        <Link to='/'>LOGO</Link>
       </button>
-
-      <SignIn />
-
-      <Link to='/favorites'>
-        <button
-          className='show-fav-btn btn'
-          id='set-filter-btn'>
-          Favorites
-        </button>
-      </Link>
-      {signUp()}
+      {(display())}
     </div>
   )
 }
