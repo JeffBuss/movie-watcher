@@ -48,19 +48,23 @@ class SignIn extends React.Component {
         return <p className='welcome'>Welcome back, {user.name}!</p>
       } else {
         return (
-          <div>
-            <input className="email"
+          <div className='signin-field'>
+            <input
+              className="email input"
               placeholder="Email"
+              type='text'
               value={email}
               onChange={e => this.setState({email: e.target.value})}/>
-
-            <input className="password"
+              <br/>
+            <input
+              className="password input"
               type="password"
               placeholder="Password"
+              type='text'
               value={password}
               onChange={e => this.setState({password: e.target.value})}/>
-
-            <button className="signin-btn"
+              <br/>
+            <button className="signin-btn btn"
               onClick={() => {
                 this.signIn();
                 this.setState({ email: '', password: '' })

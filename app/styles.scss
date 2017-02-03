@@ -28,6 +28,7 @@ $darkBG: #5a5a5a;
   border-radius: 5px;
   border: none;
   height: 3vh;
+  // background-color: #f1c40f;
 }
 
 // global
@@ -168,6 +169,18 @@ favorites {
 }
 
 // signin
+
+.signin-field {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.signin-btn {
+  position: absolute;
+  right: 0;
+}
 
 @media screen and (max-width: 480px) {
     body {
