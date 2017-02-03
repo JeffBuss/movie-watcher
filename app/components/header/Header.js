@@ -10,23 +10,6 @@ const Header = (props) => {
     props.signOutClick(null);
   }
 
-// <<<<<<< HEAD
-//   const signUp = () => {
-//     if(!props.user){
-//       return (
-//         <Link to='/join'>
-//         <button className='sign-up-out-btns btn'>
-//           Sign Up
-//         </button>
-//       </Link>
-//       )
-//     } else {
-//       return (
-//         <button className='sign-up-out-btns btn'>
-//           Sign Out
-//         </button>
-//       )
-// =======
   const display = () => {
     if(props.user){
       return(
@@ -59,32 +42,11 @@ const Header = (props) => {
             </button>
           </Link>
         </div>)
-// >>>>>>> master
     }
   }
 
   return (
-// <<<<<<< HEAD
-//     <div className='header'>
-//     <Link to='/'>
-//     <span className='logo'>
-//        Ripe
-//        <img
-//          className='logo-img'
-//          src='../assets/tomato.svg' />
-//        Tomatoes
-//     </span>
-//     </Link>
-//       <SignIn />
-//       <Link to='/favorites'>
-//         <button
-//           className='show-fav-btn btn'
-//           id='set-filter-btn'>
-//           Favorites
-//         </button>
-//       </Link>
-//       {signUp()}
-// =======
+
     <div className='header'>
       <SignIn pathname={props.pathname}/>
         <Link to='/'>
@@ -97,7 +59,6 @@ const Header = (props) => {
           </span>
         </Link>
       {(display())}
-{/* >>>>>>> master */}
     </div>
   )
 }
