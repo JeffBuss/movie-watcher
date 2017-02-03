@@ -8,7 +8,8 @@ class SignUp extends React.Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      error: false
     }
   }
 
@@ -28,9 +29,24 @@ class SignUp extends React.Component {
   .then(res => res.json())
   .then(user => {
     this.props.signInClick(user.data);
+    if(user) {browserHistory.push('/')}
   }))
-  .catch(err => alert("Email already in use."))
-}
+  .catch(err => this.setState({ error: true }))
+  }
+
+  displayError(err) {
+    if(err) {
+      return(
+        <p className='existing-user-error'>{this.state.email} already exists, please try again with a different email address</p>
+      )
+    }
+  }
+
+  // redirectOnUser() {
+  //   if(!this.state.error) {
+  //     browserHistory.push('/')
+  //   }
+  // }
 
   render(){
     return(
@@ -44,15 +60,17 @@ class SignUp extends React.Component {
                  onChange={(e) => this.setState({ email: e.target.value })}
                  className='email input'/>
 
+          {this.displayError(this.state.error)}
+
           <input placeholder='Password'
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='email input'/>
 
           <button className='btn' onClick={(e) => {
             e.preventDefault();
-            this.addNewUser();
-            browserHistory.push('/')}}>
-            Sign Up
+            this.addNewUser()
+            }}>
+            JOIN!
           </button>
         </form>
       </div>
