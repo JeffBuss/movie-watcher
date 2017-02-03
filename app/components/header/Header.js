@@ -46,6 +46,7 @@ const Header = (props) => {
   }
 
   return (
+
     <div className='header'>
       <SignIn pathname={props.pathname}/>
         <Link to='/'>
