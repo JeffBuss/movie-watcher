@@ -79,7 +79,7 @@ class SignUp extends React.Component {
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='signup-password input'/>
                 <br/>
-          <button className='btn'
+          <button className='signup-btn btn'
                   disabled={!this.state.email || !this.state.name || !this.state.password}
                   onClick={(e) => {
                     e.preventDefault();

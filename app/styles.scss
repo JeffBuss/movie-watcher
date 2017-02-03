@@ -11,12 +11,13 @@ $darkBG: #5a5a5a;
 @mixin buttonStyles {
   &:hover {
         cursor: pointer;
-        background-color: $lightBG;
+        // background-color: #e67e22;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
     }
   &:focus{
     outline: none;
   }
-  background-color: $medBG;
+  background-color: #f1c40f;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
@@ -190,7 +191,7 @@ favorites {
 }
 
 .signup-name .signup-email .signup-password {
-  width: 500px;
+  width: 400px;
 }
 
 
