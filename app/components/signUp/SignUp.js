@@ -52,7 +52,7 @@ class SignUp extends React.Component {
             e.preventDefault();
             this.addNewUser();
             browserHistory.push('/')}}>
-            JOIN!
+            Sign Up
           </button>
         </form>
       </div>

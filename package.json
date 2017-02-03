@@ -4,8 +4,8 @@
   "description": "MeatMeet",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
-    "dev-server": "webpack-dev-server --hot --inline --content-base --history-api-fallback",
-    "start": "npm build && node src/app.js && --hot --inline --history-api-fallback",
+    "dev-server": "webpack-dev-server --hot --inline --content-base",
+    "start": "npm build && node src/app.js --history-api-fallback",
     "test": "mocha -w --compilers js:babel-core/register --require helpers/test-setup.js app/**/*.test.jsx"
   },
   "keywords": [],
@@ -56,6 +56,10 @@
     "react-router-redux": "^4.0.7",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.7",
+    "svg-url-loader": "^2.0.1",
+    "svgo": "^0.7.2",
+    "svgo-loader": "^1.1.2",
+    "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.15.0"

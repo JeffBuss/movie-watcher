@@ -20,14 +20,21 @@ $darkBG: #5a5a5a;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
+  height: 3vh;
 }
 
 @mixin inputStyles {
   margin: .5vw;
   border-radius: 5px;
+  border: none;
+  height: 3vh;
 }
 
 // global
+
+a {
+  text-decoration: none;
+}
 body {
   background-color: $lightBG;
 }
@@ -44,85 +51,107 @@ body {
 
 .header {
   font-family: $sansFont;
-  background: $darkBG;
-  height: 25vh;
+  height: 15vh;
+  margin: 3vmax;
   border-radius: 5px;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin: 1vmax;
+  position: relative;
 }
 
 .logo {
   font-family: $sansFont;
-  font-size: 5vw;
+  font-size: 10vh ;
   text-decoration: none;
-  color: black;
+  color: #F22613;
+  display: flex;
+  position: absolute;
+  left: 0;
 }
 
-.logo-btn {
-  background: none;
-  border: none;
-  text-decoration: none;
+.logo-img {
+  height: 10vh;
 }
 
+.show-fav-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.welcome {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.sign-up-out-btns {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+favorites {
+
+}
 // moviecard
 
 .fav {
   position: absolute;
-  right: 4vw;
-  bottom: 4vh;
-  z-index: 2;
-  border: none;
-  outline: none;
+  right: 20px;
+  bottom: 20px;
   width: 40px;
   height: 40px;
+  z-index: 3;
+  border: none;
+  // outline: none;
+  background-image: url(/assets/tomato-red.svg);
   background-color: rgba(0,0,0,0);
-  color: $medBG;
-  text-shadow: 0px 0px 10px $medBG;
-  font-size: 2vw;
-  border-radius: 50%;
   &:hover {
     cursor: pointer;
+    background-image: url(/assets/tomato-red.svg);
     background-color: rgba(0,0,0,0);
+  }
+  &:focus{
+    outline: none;
   }
 }
 
 .favorite {
-  color: red;
-  background-color: rgba(0,0,0,0);
+  background-image: url(/assets/tomato.svg);
   &:hover {
+    background-image: url(/assets/tomato.svg);
     cursor: pointer;
+  }
+  &:focus{
+    outline: none;
   }
 }
 
 .movie-card {
-  // background-color: $medBG;
-  // color: white;
-  padding: 1vw;
-  margin: 1vw;
+  padding: 10px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   position: relative;
   flex-grow: 1;
-  max-width: 20%;
+  max-width: 22%;
 }
 
 .movie-poster {
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  // z-index: -100;
   position: relative;
   &:hover {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
     cursor: pointer;
   }
-}
-
-.movie-title {
-  display: flex;
 }
 
 // movielist
@@ -135,3 +164,15 @@ body {
 }
 
 // signin
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: #DCC6E0;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        background-color: #F1A9A0;
+    }
+}
