@@ -9,14 +9,16 @@ const Header = (props) => {
     if(!props.user){
       return (
         <Link to='/join'>
-        <button>
-          SIGN UP
+        <button className='sign-up-out-btns btn'>
+          Sign Up
         </button>
       </Link>
       )
     } else {
       return (
-        <button>Sign Out</button>
+        <button className='sign-up-out-btns btn'>
+          Sign Out
+        </button>
       )
     }
 
@@ -24,13 +26,7 @@ const Header = (props) => {
 
   return (
     <div className='header'>
-      <button
-        className='logo-btn'>
-        <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
-      </button>
-
-      <SignIn />
-
+      <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
       <Link to='/favorites'>
         <button
           className='show-fav-btn btn'
@@ -38,6 +34,7 @@ const Header = (props) => {
           Favorites
         </button>
       </Link>
+      <SignIn />
       {signUp()}
     </div>
   )

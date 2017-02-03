@@ -20,14 +20,21 @@ $darkBG: #5a5a5a;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
+  height: 3vh;
 }
 
 @mixin inputStyles {
   margin: .5vw;
   border-radius: 5px;
+  border: none;
+  height: 3vh;
 }
 
 // global
+
+a {
+  text-decoration: none;
+}
 body {
   background-color: $lightBG;
 }
@@ -45,25 +52,21 @@ body {
 .header {
   font-family: $sansFont;
   background: $darkBG;
-  height: 25vh;
+  height: 15vh;
   border-radius: 5px;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin: 1vmax;
+  margin: 3vmax;
 }
 
 .logo {
   font-family: $sansFont;
-  font-size: 5vw;
+  font-size: 10vh;
   text-decoration: none;
-  color: black;
-}
-
-.logo-btn {
-  background: none;
-  border: none;
-  text-decoration: none;
+  color: $lightBG;
+  margin-right: 5vw;
 }
 
 // moviecard
@@ -97,29 +100,26 @@ body {
 }
 
 .movie-card {
-  // background-color: $medBG;
-  // color: white;
-  padding: 1vw;
-  margin: 1vw;
+  padding: 10px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   position: relative;
   flex-grow: 1;
-  max-width: 20%;
+  max-width: 22%;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+  }
 }
 
 .movie-poster {
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   position: relative;
-}
-
-.movie-title {
-  display: flex;
 }
 
 // movielist
