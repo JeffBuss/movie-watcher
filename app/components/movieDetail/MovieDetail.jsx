@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import MovieDetailContainer from '../../containers/movieDetailContainer/MovieDetailContainer';
 // import './movieCard-style';
 
 const MovieDetail = (props) => {
   const { movie } = props
 
-  const addFavToApi = (props) => {
+  const getMatchedFavID = (props) => {
+    let match = null;
+    props.favorites.forEach(fav => {
+      if(fav.title === props.movie.title)
+        match = fav.movie_id || fav.id;
+    })
+    return match;
+  }
+
+  const addFavToApi = (movie) => {
     const {id, user, title, poster_path,
            release_date, vote_average,
-           overview} = props;
+           overview} = movie;
 
     const favID = getMatchedFavID(props);
 
+
     if(!favID){
-      fetch('api/users/favorites/new', {
+      fetch('http://localhost:3000/api/users/favorites/new', {
         method: 'POST',
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({
@@ -25,14 +36,14 @@ const MovieDetail = (props) => {
           vote_average: vote_average,
           overview: overview })
         })
-        .then(() => props.addFav(props))
+        .then(() => props.addFav(movie))
       } else {
 
-        fetch(`api/users/${user.id}/favorites/${favID}`, {
+        fetch(`http://localhost:3000/api/users/${user.id}/favorites/${favID}`, {
           method: "DELETE",
           headers: {'Content-Type' : 'application/json'},
         })
-          .then(() => props.removeFav(props))
+          .then(() => props.removeFav(movie))
           .catch(err => console.log(err))
       }
   }
@@ -40,24 +51,23 @@ const MovieDetail = (props) => {
   const favCheck = () => {
     let favorited = "";
     props.favorites.forEach(fav => {
-      if(fav.title === props.title)
+      if(fav.title === movie.title)
         favorited = "favorite"
     })
     return favorited;
   }
 
-  const favoriteBtn = (props) => {
-    if(props.user) {
+  const favoriteBtn = (movie) => {
+    if(movie.user) {
     return (
       <button className={"fav " + favCheck()}
-        onClick={() => addFavToApi(props)}>
+        onClick={() => addFavToApi(movie)}>
         ♥︎
       </button>
     )}
   }
 
   return (
-
     <div className='movie-card'>
       <h1 className='movie-title'>{movie.title}</h1>
       <p className='movie-release'>{movie.release_date}</p>
@@ -69,4 +79,4 @@ const MovieDetail = (props) => {
   );
 };
 
-export default MovieDetail;
+export default MovieDetailContainer(MovieDetail);
