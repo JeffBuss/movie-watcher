@@ -1,5 +1,6 @@
 import React from 'react';
 import './signUp-style';
+import { browserHistory } from 'react-router';
 
 class SignUp extends React.Component {
   constructor() {
@@ -25,7 +26,9 @@ class SignUp extends React.Component {
     body: JSON.stringify({email, password})
   })
   .then(res => res.json())
-  .then(user => this.props.signInClick(user.data)))
+  .then(user => {
+    this.props.signInClick(user.data);
+  }))
   .catch(err => alert("Email already in use."))
 }
 
@@ -44,8 +47,8 @@ class SignUp extends React.Component {
 
           <button onClick={(e) => {
             e.preventDefault();
-            this.addNewUser()
-          }}>
+            this.addNewUser();
+            browserHistory.push('/')}}>
             JOIN!
           </button>
         </form>
