@@ -26,7 +26,16 @@ const Header = (props) => {
 
   return (
     <div className='header'>
-      <Link to='/'><span className='logo'>Ripe Tomatoes</span></Link>
+    <Link to='/'>
+    <span className='logo'>
+       Ripe 
+       <img
+         className='logo-img'
+         src='../assets/tomato.svg' />
+       Tomatoes
+    </span>
+    </Link>
+      <SignIn />
       <Link to='/favorites'>
         <button
           className='show-fav-btn btn'
@@ -34,7 +43,6 @@ const Header = (props) => {
           Favorites
         </button>
       </Link>
-      <SignIn />
       {signUp()}
     </div>
   )

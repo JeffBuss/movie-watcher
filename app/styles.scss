@@ -51,51 +51,82 @@ body {
 
 .header {
   font-family: $sansFont;
-  background: $darkBG;
   height: 15vh;
+  margin: 3vmax;
   border-radius: 5px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin: 3vmax;
+  position: relative;
 }
 
 .logo {
   font-family: $sansFont;
-  font-size: 4em;
+  font-size: 10vh ;
   text-decoration: none;
-  color: $lightBG;
-  margin-right: 5vw;
+  color: #F22613;
+  display: flex;
+  position: absolute;
+  left: 0;
 }
 
+.logo-img {
+  height: 10vh;
+}
+
+.show-fav-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.welcome {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.sign-up-out-btns {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+favorites {
+
+}
 // moviecard
 
 .fav {
   position: absolute;
-  right: 4vw;
-  bottom: 4vh;
-  z-index: 2;
-  border: none;
-  outline: none;
+  right: 20px;
+  bottom: 20px;
   width: 40px;
   height: 40px;
+  z-index: 3;
+  border: none;
+  // outline: none;
+  background-image: url(/assets/tomato-red.svg);
   background-color: rgba(0,0,0,0);
-  color: $medBG;
-  text-shadow: 0px 0px 10px $medBG;
-  font-size: 2vw;
-  border-radius: 50%;
   &:hover {
     cursor: pointer;
+    background-image: url(/assets/tomato-red.svg);
     background-color: rgba(0,0,0,0);
+  }
+  &:focus{
+    outline: none;
   }
 }
 
 .favorite {
-  color: red;
-  background-color: rgba(0,0,0,0);
+  background-image: url(/assets/tomato.svg);
   &:hover {
+    background-image: url(/assets/tomato.svg);
     cursor: pointer;
+  }
+  &:focus{
+    outline: none;
   }
 }
 
@@ -107,10 +138,6 @@ body {
   position: relative;
   flex-grow: 1;
   max-width: 22%;
-  &:hover {
-    cursor: pointer;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-  }
 }
 
 .movie-poster {
@@ -119,7 +146,11 @@ body {
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  // z-index: -100;
   position: relative;
+  &:hover {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+  }
 }
 
 // movielist

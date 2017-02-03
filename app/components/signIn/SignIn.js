@@ -34,7 +34,7 @@ class SignIn extends React.Component {
     const { email, password } = this.state;
 
     if(user) {
-      return <p className='welcome'>Welcome, {user.name}!</p>
+      return <p className='welcome'>Welcome back, {user.name}!</p>
     } else {
       return (
         <div>

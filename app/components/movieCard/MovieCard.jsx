@@ -57,8 +57,8 @@ const MovieCard = (props) => {
     return (
       <button className={"fav " + favCheck()}
         onClick={() => addFavToApi(props)}>
-        ♥︎
-      </button>
+        {/* <img src='../assets/tomato-red.svg' /> */}
+        </button>
     )}
   }
 
