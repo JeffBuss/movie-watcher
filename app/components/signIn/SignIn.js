@@ -26,7 +26,18 @@ class SignIn extends React.Component {
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
-    .catch(err => alert("Invalid Email/Password."))
+    .catch(err => this.displayError(err))
+  }
+
+  displayError(err) {
+    console.log(err)
+    if(err) {
+      return (
+        <div>
+          <p className='login-error'>Email and/or password do not match</p>
+        </div>
+      );
+    }
   }
 
   userCheck(){
@@ -53,6 +64,7 @@ class SignIn extends React.Component {
               onClick={() => this.signIn()}>
               Sign In
             </button>
+            {this.displayError()}
           </div>
         )
       }
