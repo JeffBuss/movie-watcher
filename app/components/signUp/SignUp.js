@@ -40,13 +40,19 @@ class SignUp extends React.Component {
         return(
           <p className='submit-error'>Email already exists, please try again with a different email address</p>
         );
-      case 'BLANK_FIELD':
+      case 'INVALID_EMAIL':
         return (
           <p className='submit-error'>Please enter a valid email address</p>
         )
     }
   }
 
+  testEmail() {
+    const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (filter.test(this.state.email)) {
+      return true;
+    } else { return false }
+  }
 
 
   render(){
@@ -71,15 +77,18 @@ class SignUp extends React.Component {
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='email input'/>
 
-          <button className='btn' onClick={(e) => {
-            e.preventDefault();
-            if(!email) {
-              this.setState({ error: 'BLANK_FIELD' })
-              return
-            }
-            this.addNewUser();
-            this.setState({ name: '', email: '', password: '' })
-            }}>
+          <button className='btn'
+                  disabled={!this.state.email || !this.state.name || !this.state.password}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if(!email || !this.testEmail()) {
+                      this.setState({ error: 'INVALID_EMAIL' })
+                    } else {
+                      this.testEmail()
+                      this.addNewUser();
+                    }
+                    this.setState({ name: '', email: '', password: '' })
+                  }}>
             JOIN!
           </button>
         </form>
