@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './movieList-style';
 import MovieCard from '../../containers/movieContainer/MovieContainer';
+import Search from '../search/Search';
 
 const MovieList = (props) => {
 
@@ -20,6 +21,14 @@ const MovieList = (props) => {
     }
   }
 
+  const search = () => {
+    if(path === '/') {
+      return(
+        <Search />
+      )
+    }
+  }
+
   const movies = props.movies.map(obj => {
     return (
       <MovieCard key={obj.id} {...obj} />
@@ -28,6 +37,7 @@ const MovieList = (props) => {
 
   return (
     <div className='movie-list'>
+        {search()}
         {pathCheck()}
     </div>
   );
