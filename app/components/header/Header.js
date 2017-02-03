@@ -3,8 +3,14 @@ import SignIn from "../../containers/signInContainer/SignInContainer";
 import { Link } from 'react-router'
 
 const Header = (props) => {
-  console.log(props);
+  
+  const signOutUser = () => {
+    localStorage.clear();
+    props.clearFavorites();
+    props.signOutClick(null);
+  }
 
+<<<<<<< HEAD
   const signUp = () => {
     if(!props.user){
       return (
@@ -20,11 +26,25 @@ const Header = (props) => {
           Sign Out
         </button>
       )
+=======
+  const display = () => {
+    if(props.user){
+      return(<div>
+        <Link to='/favorites'><button>FAVORITES</button></Link>
+        <button onClick={() => signOutUser()}>Sign Out</button>
+      </div>)
+    } else if(props.pathname !== "/join") {
+      return (
+        <div>
+          <Link to='/favorites'><button>FAVORITES</button></Link>
+          <Link to='/join'><button>SIGN UP</button></Link>
+        </div>)
+>>>>>>> master
     }
-
   }
 
   return (
+<<<<<<< HEAD
     <div className='header'>
     <Link to='/'>
     <span className='logo'>
@@ -44,6 +64,14 @@ const Header = (props) => {
         </button>
       </Link>
       {signUp()}
+=======
+    <div>
+      <SignIn pathname={props.pathname}/>
+      <button>
+        <Link to='/'>LOGO</Link>
+      </button>
+      {(display())}
+>>>>>>> master
     </div>
   )
 }

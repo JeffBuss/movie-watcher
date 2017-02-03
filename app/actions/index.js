@@ -5,7 +5,7 @@ export const addToFavorites = (movie) => {
   }
 }
 
-export const loadTheaters = (movies) => {
+export const loadMovies = (movies) => {
   // console.log('2')
   return {
     type: 'LOAD_MOVIES',
@@ -23,6 +23,19 @@ export const signInUser = (user) => {
 export const removeFavorites = (movie) => {
   return {
     type: "REMOVE_FAVORITES",
+    movie
+  }
+}
+
+export const clearFavorites = () => {
+  return {
+    type: "CLEAR_FAVORITES",
+  }
+}
+    
+export const setCurrentMovie = (movie) => {
+  return {
+    type: 'SET_CURRENT',
     movie
   }
 }

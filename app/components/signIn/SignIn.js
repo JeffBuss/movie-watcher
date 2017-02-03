@@ -32,7 +32,18 @@ class SignIn extends React.Component {
   userCheck(){
     const { user } = this.props;
     const { email, password } = this.state;
+    if(this.props.pathname !== "/join"){
+      if(user) {
+        return <p>Welcome, {user.name}!</p>
+      } else {
+        return (
+          <div>
+            <input className="email"
+              placeholder="Email"
+              value={email}
+              onChange={e => this.setState({email: e.target.value})}/>
 
+<<<<<<< HEAD
     if(user) {
       return <p className='welcome'>Welcome back, {user.name}!</p>
     } else {
@@ -42,19 +53,22 @@ class SignIn extends React.Component {
                  placeholder="Email"
                  value={email}
                  onChange={e => this.setState({email: e.target.value})}/>
+=======
+            <input className="password"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => this.setState({password: e.target.value})}/>
+>>>>>>> master
 
-          <input className="password input"
-                 type="password"
-                 placeholder="Password"
-                 value={password}
-                 onChange={e => this.setState({password: e.target.value})}/>
+            <button className="signin-btn"
+              onClick={() => this.signIn()}>
+              Sign In
+            </button>
+          </div>
+        )
+      }
 
-          <button className="signin-btn btn"
-                  onClick={() => this.signIn()}>
-            Sign In
-          </button>
-        </div>
-      )
     }
   }
 
