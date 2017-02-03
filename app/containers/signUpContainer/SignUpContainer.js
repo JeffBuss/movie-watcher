@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     signInClick: (user) => {
       dispatch(signInUser(user));
-    }
+    },
   }
 }
 
