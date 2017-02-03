@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadMovies, setFilter } from '../../actions';
+import { loadMovies, signInUser } from '../../actions';
 import App from '../../components/app/App';
 
 const mapDispatchToProps = (dispatch) => {
