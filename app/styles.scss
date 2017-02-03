@@ -26,9 +26,8 @@ $darkBG: #5a5a5a;
 @mixin inputStyles {
   margin: .5vw;
   border-radius: 5px;
-  border: none;
+  border: 2px solid #f1c40f;
   height: 3vh;
-  // background-color: #f1c40f;
 }
 
 // global
@@ -181,6 +180,19 @@ favorites {
   position: absolute;
   right: 0;
 }
+
+// sign-up
+
+.sign-up-field {
+  position: absolute;
+  left: 3vmax;
+  width: 500px;
+}
+
+.signup-name .signup-email .signup-password {
+  width: 500px;
+}
+
 
 @media screen and (max-width: 480px) {
     body {

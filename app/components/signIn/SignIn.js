@@ -60,7 +60,6 @@ class SignIn extends React.Component {
               className="password input"
               type="password"
               placeholder="Password"
-              type='text'
               value={password}
               onChange={e => this.setState({password: e.target.value})}/>
               <br/>
