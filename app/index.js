@@ -1,11 +1,11 @@
+import './reset'
+import './styles';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
-import './reset'
-import './styles';
 import App from './containers/appContainer/AppContainer';
 import MovieListContainer from './containers/movieListContainer/MovieListContainer';
 import SignUpContainer from './containers/signUpContainer/SignUpContainer';
