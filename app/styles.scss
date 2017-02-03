@@ -138,6 +138,11 @@ favorites {
   position: relative;
   flex-grow: 1;
   max-width: 22%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform .3s;
+  }
 }
 
 .movie-poster {
