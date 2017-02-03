@@ -42,12 +42,6 @@ class SignUp extends React.Component {
     }
   }
 
-  // redirectOnUser() {
-  //   if(!this.state.error) {
-  //     browserHistory.push('/')
-  //   }
-  // }
-
   render(){
     return(
       <div>
