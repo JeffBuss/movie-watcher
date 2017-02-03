@@ -43,7 +43,7 @@ class SignIn extends React.Component {
     const { email, password } = this.state;
     if(this.props.pathname !== "/join"){
       if(user) {
-        return <p>Welcome, {user.name}!</p>
+        return <p className='welcome'>Welcome back, {user.name}!</p>
       } else {
         return (
           <div>

@@ -23,7 +23,8 @@ module.exports = {
        }
      },
      { test: /\.css$/, loader: 'style-loader!css-loader' },
-     { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }
+     { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+     { test: /\.svg$/, loader: 'svg-url-loader' },
    ]},
   resolve: {
     extensions: ['', '.js', '.jsx', '.json', '.scss', '.css']

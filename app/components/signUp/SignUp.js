@@ -66,11 +66,6 @@ class SignUp extends React.Component {
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='email input'/>
 
-          {/* <button className='btn' onClick={(e) => {
-            e.preventDefault();
-            this.addNewUser();
-            browserHistory.push('/')}}> */}
-
           <button className='btn' onClick={(e) => {
             e.preventDefault();
             this.addNewUser()
