@@ -87,7 +87,6 @@ class SignUp extends React.Component {
                       this.testEmail()
                       this.addNewUser();
                     }
-                    this.setState({ name: '', email: '', password: '' })
                   }}>
             JOIN!
           </button>
