@@ -23,7 +23,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-//fix favorites on refresh, reset favorites on signout
 
 const mapStateToProps = (state) => {
   // console.log('4')

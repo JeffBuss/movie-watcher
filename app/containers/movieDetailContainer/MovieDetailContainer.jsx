@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToFavorites, removeFavorites, setCurrentMovie } from '../../actions';
-import MovieCard from '../../components/movieCard/MovieCard';
-
+import { addToFavorites, removeFavorites } from '../../actions';
 const mapDispatchToProps = (dispatch) => {
   return {
     addFav: (movie) => {
@@ -11,18 +9,15 @@ const mapDispatchToProps = (dispatch) => {
     removeFav: (movie) => {
       dispatch(removeFavorites(movie))
     },
-    setCurrentMovie: (movie) => {
-      dispatch(setCurrentMovie(movie))
-    }
   };
 };
 
 const mapStateToProps = (state) => {
   return {
     favorites: state.favoritesReducer,
-    movies: state.movieListReducer,
+    movie: state.currentMovieReducer,
     user: state.userReducer
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)
+export default connect(mapStateToProps, mapDispatchToProps)

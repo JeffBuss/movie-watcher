@@ -10,6 +10,7 @@ import App from './containers/appContainer/AppContainer';
 import MovieListContainer from './containers/movieListContainer/MovieListContainer';
 import SignUpContainer from './containers/signUpContainer/SignUpContainer';
 import FavoritesContainer from "./containers/favoritesContainer/FavoritesContainer";
+import MovieDetail from './components/movieDetail/MovieDetail';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
@@ -23,6 +24,7 @@ const router = (
         <IndexRoute component={MovieListContainer} />
         <Route path='/join' component={SignUpContainer} />
         <Route path='/favorites' component={FavoritesContainer} />
+        <Route path='/movies/:movie_title' component={MovieDetail} />
       </Route>
     </Router>
   </Provider>

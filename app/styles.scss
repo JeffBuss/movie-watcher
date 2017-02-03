@@ -116,6 +116,9 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .movie-title {
