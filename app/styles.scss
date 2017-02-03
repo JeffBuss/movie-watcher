@@ -107,11 +107,11 @@ favorites {
   height: 44px;
   z-index: 3;
   border: none;
-  background-image: url(/assets/tomato.svg);
+  background-image: url(/assets/tomato-gray.svg);
   background-color: rgba(0,0,0,0);
   &:hover {
     cursor: pointer;
-    background-image: url(/assets/tomato.svg);
+    background-image: url(/assets/tomato-green.svg);
     background-color: rgba(0,0,0,0);
   }
   &:focus{
@@ -120,9 +120,9 @@ favorites {
 }
 
 .favorite {
-  background-image: url(/assets/tomato-gray.svg);
+  background-image: url(/assets/tomato.svg);
   &:hover {
-    background-image: url(/assets/tomato-green.svg);
+    background-image: url(/assets/tomato.svg);
     cursor: pointer;
   }
   &:focus{
@@ -138,6 +138,11 @@ favorites {
   position: relative;
   flex-grow: 1;
   max-width: 22%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform .3s;
+  }
 }
 
 .movie-poster {

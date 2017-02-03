@@ -1,11 +1,12 @@
 import React from "react";
+import './signIn-style';
 
 class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: "tman2272@aol.com",
-      password: "password",
+      email: "",
+      password: "",
       error: false
     }
   }
@@ -22,6 +23,7 @@ class SignIn extends React.Component {
     .then(user => {
       this.props.signInClick(user.data)
       this.props.addToLocalStorage(user.data)
+      this.setState({ error: false })
     })
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
@@ -59,7 +61,10 @@ class SignIn extends React.Component {
               onChange={e => this.setState({password: e.target.value})}/>
 
             <button className="signin-btn"
-              onClick={() => this.signIn()}>
+              onClick={() => {
+                this.signIn();
+                this.setState({ email: '', password: '' })
+              }}>
               Sign In
             </button>
             {this.displayError(this.state.error)}
