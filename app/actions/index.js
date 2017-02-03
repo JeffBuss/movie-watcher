@@ -6,7 +6,6 @@ export const addToFavorites = (movie) => {
 }
 
 export const loadMovies = (movies) => {
-  // console.log('2')
   return {
     type: 'LOAD_MOVIES',
     movies
@@ -32,7 +31,7 @@ export const clearFavorites = () => {
     type: "CLEAR_FAVORITES",
   }
 }
-    
+
 export const setCurrentMovie = (movie) => {
   return {
     type: 'SET_CURRENT',
