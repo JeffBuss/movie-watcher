@@ -26,3 +26,9 @@ export const removeFavorites = (movie) => {
     movie
   }
 }
+
+export const clearFavorites = () => {
+  return {
+    type: "CLEAR_FAVORITES",
+  }
+}

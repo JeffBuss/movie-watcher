@@ -10,6 +10,9 @@ const favorites = (state=[], action) => {
         }
       });
 
+    case "CLEAR_FAVORITES":
+      return [];
+
     default:
       return state;
   }
