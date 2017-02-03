@@ -3,12 +3,18 @@ import SignIn from "../../containers/signInContainer/SignInContainer";
 import { Link } from 'react-router'
 
 const Header = (props) => {
+  
+  const signOutUser = () => {
+    localStorage.clear();
+    props.clearFavorites();
+    props.signOutClick(null);
+  }
 
   const display = () => {
     if(props.user){
       return(<div>
         <Link to='/favorites'><button>FAVORITES</button></Link>
-        <button>Sign Out</button>
+        <button onClick={() => signOutUser()}>Sign Out</button>
       </div>)
     } else if(props.pathname !== "/join") {
       return (
