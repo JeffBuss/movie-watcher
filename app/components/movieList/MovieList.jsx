@@ -27,7 +27,7 @@ const MovieList = (props) => {
   });
 
   return (
-    <div>
+    <div className='movie-list'>
         {pathCheck()}
     </div>
   );

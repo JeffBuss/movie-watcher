@@ -4,7 +4,7 @@ class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: "limbo@gmail.com",
+      email: "tman2272@aol.com",
       password: "password"
     }
   }
@@ -18,7 +18,11 @@ class SignIn extends React.Component {
       body: JSON.stringify({email, password})
     })
     .then(res => res.json())
-    .then(user => this.props.signInClick(user.data))
+    .then(user => {
+      this.props.signInClick(user.data)
+      this.props.addToLocalStorage(user.data)
+    })
+
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
@@ -52,12 +56,13 @@ class SignIn extends React.Component {
           </div>
         )
       }
+
     }
   }
 
   render(){
     return(
-      <div>
+      <div className='signin'>
         {this.userCheck()}
       </div>
     )

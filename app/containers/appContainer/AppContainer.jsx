@@ -9,6 +9,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchMovies: (movies) => {
       dispatch(loadMovies(movies))
     },
+    getUser: (user) => {
+      dispatch(signInUser(user))
+    },
   }
 }
 
