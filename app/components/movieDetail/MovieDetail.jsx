@@ -8,6 +8,7 @@ const MovieDetail = (props) => {
          release_date, vote_average,
          overview} = props.movie;
 
+console.log(props);
   const { movie } = props
 
   const getMatchedFavID = () => {
@@ -29,7 +30,7 @@ const MovieDetail = (props) => {
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({
           movie_id: id,
-          user_id: user.id,
+          user_id: props.user.id,
           title: title,
           poster_path: poster_path,
           release_date: release_date,
@@ -57,8 +58,8 @@ const MovieDetail = (props) => {
     return favorited;
   }
 
-  const favoriteBtn = () => {
-    if(user) {
+  const favoriteBtn = (movie) => {
+    if(props.user) {
     return (
       <button className={"fav " + favCheck()}
         onClick={() => addFavToApi(movie)}>
@@ -68,7 +69,7 @@ const MovieDetail = (props) => {
   }
 
   return (
-    <div className='movie-card'>
+    <div className='movie-detail-card'>
       <h1 className='movie-title'>{title}</h1>
       <p className='movie-release'>{release_date}</p>
       <p className='movie-overview'>{overview}</p>
