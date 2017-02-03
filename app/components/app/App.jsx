@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { loadTheaters } from '../../actions';
 import Header from '../header/Header';
 
 class App extends Component {
@@ -25,7 +24,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header user={this.props.user} />
+        <Header user={this.props.user}
+                pathname={this.props.location.pathname}/>
         {this.props.children}
       </div>
     )

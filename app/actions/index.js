@@ -5,7 +5,7 @@ export const addToFavorites = (movie) => {
   }
 }
 
-export const loadTheaters = (movies) => {
+export const loadMovies = (movies) => {
   // console.log('2')
   return {
     type: 'LOAD_MOVIES',
