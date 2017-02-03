@@ -34,7 +34,6 @@ const MovieCard = (props) => {
         })
         .then(() => props.addFav(props))
       } else {
-
         fetch(`api/users/${user.id}/favorites/${favID}`, {
           method: "DELETE",
           headers: {'Content-Type' : 'application/json'},
@@ -70,7 +69,9 @@ const MovieCard = (props) => {
       {favoriteBtn(props)}
       <Link to={`/movies/${props.title}`}>
         <img className='movie-poster'
-        src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}/>
+             src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}
+             onClick={() => props.setCurrentMovie(props)}
+             />
       </Link>
     </div>
   );

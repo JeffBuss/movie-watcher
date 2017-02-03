@@ -10,15 +10,14 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeFav: (movie) => {
       dispatch(removeFavorites(movie))
-    }
+    },
   };
 };
 
 const mapStateToProps = (state) => {
   return {
     favorites: state.favoritesReducer,
-    movies: state.movieListReducer,
-    user: state.userReducer
+    movie: state.currentMovieReducer,
   };
 };
 

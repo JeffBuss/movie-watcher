@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToFavorites, removeFavorites } from '../../actions';
+import { addToFavorites, removeFavorites, setCurrentMovie } from '../../actions';
 import MovieCard from '../../components/movieCard/MovieCard';
 
 const mapDispatchToProps = (dispatch) => {
@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeFav: (movie) => {
       dispatch(removeFavorites(movie))
+    },
+    setCurrentMovie: (movie) => {
+      dispatch(setCurrentMovie(movie))
     }
   };
 };

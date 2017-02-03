@@ -26,3 +26,10 @@ export const removeFavorites = (movie) => {
     movie
   }
 }
+
+export const setCurrentMovie = (movie) => {
+  return {
+    type: 'SET_CURRENT',
+    movie
+  }
+}
