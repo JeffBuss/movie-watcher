@@ -11,10 +11,9 @@ class Search extends Component {
   }
 
   getResults() {
-    fetch('https://api.themoviedb.org/3/search/movie?api_key=74e395a1a0373d4f389e8f007c86c5e7&query=rudy')
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=74e395a1a0373d4f389e8f007c86c5e7&query=${this.state.searchValue}`)
       .then(data => data.json())
-      .then(data => this.props.loadResults(data))
-    // this.props.loadResults({name: 'guy'})
+      .then(data => this.props.loadResults(data.results))
   }
 
   render() {
