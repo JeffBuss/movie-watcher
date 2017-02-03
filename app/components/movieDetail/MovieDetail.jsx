@@ -4,9 +4,13 @@ import MovieDetailContainer from '../../containers/movieDetailContainer/MovieDet
 // import './movieCard-style';
 
 const MovieDetail = (props) => {
+  const {id, user, title, poster_path,
+         release_date, vote_average,
+         overview} = props.movie;
+
   const { movie } = props
 
-  const getMatchedFavID = (props) => {
+  const getMatchedFavID = () => {
     let match = null;
     props.favorites.forEach(fav => {
       if(fav.title === props.movie.title)
@@ -15,13 +19,9 @@ const MovieDetail = (props) => {
     return match;
   }
 
-  const addFavToApi = (movie) => {
-    const {id, user, title, poster_path,
-           release_date, vote_average,
-           overview} = movie;
+  const addFavToApi = () => {
 
     const favID = getMatchedFavID(props);
-
 
     if(!favID){
       fetch('http://localhost:3000/api/users/favorites/new', {
@@ -51,14 +51,14 @@ const MovieDetail = (props) => {
   const favCheck = () => {
     let favorited = "";
     props.favorites.forEach(fav => {
-      if(fav.title === movie.title)
+      if(fav.title === title)
         favorited = "favorite"
     })
     return favorited;
   }
 
-  const favoriteBtn = (movie) => {
-    if(movie.user) {
+  const favoriteBtn = () => {
+    if(user) {
     return (
       <button className={"fav " + favCheck()}
         onClick={() => addFavToApi(movie)}>
@@ -69,12 +69,12 @@ const MovieDetail = (props) => {
 
   return (
     <div className='movie-card'>
-      <h1 className='movie-title'>{movie.title}</h1>
-      <p className='movie-release'>{movie.release_date}</p>
+      <h1 className='movie-title'>{title}</h1>
+      <p className='movie-release'>{release_date}</p>
+      <p className='movie-overview'>{overview}</p>
       {favoriteBtn(movie)}
         <img className='movie-poster'
-             src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}/>
-
+             src={`https://image.tmdb.org/t/p/w342/${poster_path}`}/>
     </div>
   );
 };
