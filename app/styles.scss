@@ -63,7 +63,7 @@ body {
 
 .logo {
   font-family: $sansFont;
-  font-size: 10vh;
+  font-size: 4em;
   text-decoration: none;
   color: $lightBG;
   margin-right: 5vw;
@@ -132,3 +132,15 @@ body {
 }
 
 // signin
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: #DCC6E0;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        background-color: #F1A9A0;
+    }
+}
