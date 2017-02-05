@@ -70,6 +70,7 @@ console.log(props);
   return (
     <div className='movie-detail-card'>
       <div className='movie-detail-info'>
+        <br/>
         <h1 className='movie-title'>{title}</h1>
           <br/>
         <p className='movie-release'>{release_date}</p>
@@ -77,10 +78,12 @@ console.log(props);
         <p className='movie-overview'>{overview}</p>
           <br/>
       </div>
+      <div className='movie-detail-poster-fav'>
+        <div className='movie-detail-fav'>{favoriteBtn(movie)}</div>
         <img className='movie-detail-poster'
              src={`https://image.tmdb.org/t/p/w342/${poster_path}`}>
         </img>
-        <div className='movie-detail-fav'>{favoriteBtn(movie)}</div>
+      </div>
     </div>
   );
 };

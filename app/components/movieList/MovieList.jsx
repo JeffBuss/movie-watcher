@@ -5,8 +5,8 @@ import Search from '../search/Search';
 
 const MovieList = (props) => {
 
-  const noUser = <p>Please sign in to view and add to your favorites.
-                    <br/> Or sign up here!</p>;
+  const noUser = <p className='fav-error'>Please sign in to view and add to your favorites.
+                    <br/> Or sign up above!</p>;
   const noFavorites = <p>No favorites.</p>
   const path = props.router.location.pathname;
 

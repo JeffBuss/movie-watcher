@@ -62,6 +62,7 @@ class SignIn extends React.Component {
               placeholder="Password"
               value={password}
               onChange={e => this.setState({password: e.target.value})}/>
+              {this.displayError(this.state.error)}
               <br/>
             <button className="signin-btn btn"
               onClick={() => {
@@ -70,7 +71,6 @@ class SignIn extends React.Component {
               }}>
               Sign In
             </button>
-            {this.displayError(this.state.error)}
           </div>
         )
       }

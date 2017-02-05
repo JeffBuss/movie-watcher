@@ -27,8 +27,11 @@ $darkBG: #5a5a5a;
 @mixin inputStyles {
   margin: .5vw;
   border-radius: 5px;
-  border: 2px solid #f1c40f;
+  border: 2px solid $medBG;
   height: 3vh;
+  &:focus{
+    border: 2px solid #f1c40f;
+  }
 }
 
 // global
@@ -91,7 +94,11 @@ body {
 .sign-up-out-btns {
   position: absolute;
   right: 0;
-  top: 0;
+    top: 0;
+}
+
+.login-error {
+  color: red;
 }
 
 favorites {
@@ -167,9 +174,13 @@ favorites {
 }
 
 .movie-detail-poster {
-  position: absolute;
+  position: relative;
   width: 45vw;
   left: 0;
+}
+
+.movie-detail-poster-fav {
+  position: relative;
 }
 
 .movie-detail-info {
@@ -185,7 +196,7 @@ favorites {
 
 .movie-release {
   font-size: 2em;
-  font-family: $serifFont;
+  font-family: $sansFont;
 }
 
 .movie-overview {
@@ -194,9 +205,9 @@ favorites {
 }
 
 .movie-detail-fav {
-  position: absolute;;
+  position: absolute;
   bottom: 0;
-  left: 0;
+  left: 45vw;
   margin-top: vw;
 }
 
@@ -209,13 +220,24 @@ favorites {
   align-items: center;
 }
 
+.fav-error {
+  position: absolute;
+  font-family: $serifFont;
+  color: red;
+  font-size: 1.5em;
+  text-align: right;
+  margin: 3vw;
+  right: 0;
+}
+
 // search
 
 .search-field {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  margin-left: 3vw;
 }
 
 
