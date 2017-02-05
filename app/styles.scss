@@ -167,6 +167,16 @@ favorites {
   align-items: center;
 }
 
+// search
+
+.search-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
 // signin
 
 @media screen and (max-width: 480px) {
