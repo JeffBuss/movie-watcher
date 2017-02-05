@@ -63,19 +63,24 @@ console.log(props);
     return (
       <button className={"fav " + favCheck()}
         onClick={() => addFavToApi(movie)}>
-        ♥︎
       </button>
     )}
   }
 
   return (
     <div className='movie-detail-card'>
-      <h1 className='movie-title'>{title}</h1>
-      <p className='movie-release'>{release_date}</p>
-      <p className='movie-overview'>{overview}</p>
-      {favoriteBtn(movie)}
-        <img className='movie-poster'
-             src={`https://image.tmdb.org/t/p/w342/${poster_path}`}/>
+      <div className='movie-detail-info'>
+        <h1 className='movie-title'>{title}</h1>
+          <br/>
+        <p className='movie-release'>{release_date}</p>
+          <br/>
+        <p className='movie-overview'>{overview}</p>
+          <br/>
+      </div>
+        <img className='movie-detail-poster'
+             src={`https://image.tmdb.org/t/p/w342/${poster_path}`}>
+        </img>
+        <div className='movie-detail-fav'>{favoriteBtn(movie)}</div>
     </div>
   );
 };
