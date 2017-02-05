@@ -159,6 +159,47 @@ favorites {
   }
 }
 
+//MovieDetail
+
+.movie-detail-card {
+  position: relative;
+  margin: 4vw;
+}
+
+.movie-detail-poster {
+  position: absolute;
+  width: 45vw;
+  left: 0;
+}
+
+.movie-detail-info {
+  position: absolute;
+  width: 45vw;
+  right: 0;
+}
+
+.movie-title {
+  font-size: 3em;
+  font-family: $sansFont;
+}
+
+.movie-release {
+  font-size: 2em;
+  font-family: $serifFont;
+}
+
+.movie-overview {
+  font-size: 1.5em;
+  font-family: $serifFont;
+}
+
+.movie-detail-fav {
+  position: absolute;;
+  bottom: 0;
+  left: 0;
+  margin-top: vw;
+}
+
 // movielist
 
 .movie-list {
