@@ -60,14 +60,15 @@ body {
 // header
 
 .header {
+  // border: 2px solid red;
   font-family: $sansFont;
   height: 15vh;
   margin: 3vmax;
   border-radius: 5px;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // flex-wrap: nowrap;
+  // align-items: center;
+  // justify-content: center;
   position: relative;
 }
 
@@ -79,16 +80,18 @@ body {
   display: flex;
   position: absolute;
   left: 0;
+  top: 0;
 }
 
 .logo-img {
   height: 10vh;
+  // width: 10vw;
 }
 
 .show-fav-btn {
-  position: absolute;
-  top: 0;
+  position: relative;
   left: 0;
+  top: 0;
 }
 
 .welcome {
@@ -98,9 +101,12 @@ body {
 }
 
 .sign-up-out-btns {
+  // float: right;
+
+  // text-align: right;
   position: absolute;
   right: 0;
-    top: 0;
+  //   top: 0;
 }
 
 .login-error {
@@ -259,14 +265,18 @@ body {
 
 .signin-field {
   display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  text-align: right;
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
 }
 
 .signin-btn {
-  position: absolute;
-  right: 0;
+  // border: 1px solid blue;
+  // margin-left: 100px;
+  // display: inline-block;
+  // position: absolute;
+  // right: 0;
 }
 
 .signin-error-field {
