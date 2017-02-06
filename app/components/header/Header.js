@@ -11,19 +11,10 @@ const Header = (props) => {
   }
 
   const display = () => {
-    const toggleButton = (
-      <Link to={props.pathname != '/favorites' ? '/favorites' : '/'}>
-        <button
-          className='show-fav-btn btn'>
-            {props.pathname != '/favorites' ? 'Favorites' : 'Home'}
-        </button>
-      </Link>
-    )
 
     if(props.user){
       return(
       <div>
-        {toggleButton}
         <button
           className='sign-up-out-btns btn'
           onClick={() => signOutUser()}>
@@ -33,7 +24,6 @@ const Header = (props) => {
     } else if(props.pathname !== "/join") {
       return (
         <div>
-          {toggleButton}
           <Link to='/join'>
             <button
               className='sign-up-out-btns btn'>
