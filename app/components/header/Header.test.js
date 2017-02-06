@@ -4,9 +4,10 @@ import Header from './Header';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
-const fakeStore = configureMockStore()({ })
+const fakeStore = configureMockStore()({})
 
 const setup = (user = null) => {
+
   const props = {
     user: user,
     pathname: '/',
@@ -15,7 +16,7 @@ const setup = (user = null) => {
   }
 
   const wrapper = mount(
-    <Provider store={fakeStore}>
+    <Provider store={fakeStore} >
       <Header {...props} />
     </Provider>
   )
@@ -30,6 +31,22 @@ const setup = (user = null) => {
 
 describe('components', () => {
   describe('Header', () => {
+
+
+
+    // beforeEach(function () {
+    //   var store = {};
+    //
+    //   spyOn(localStorage, 'getItem').andCallFake(function (key) {
+    //     return store[key];
+    //   });
+    //   spyOn(localStorage, 'setItem').andCallFake(function (key, value) {
+    //     return store[key] = value + '';
+    //   });
+    //   spyOn(localStorage, 'clear').andCallFake(function () {
+    //       store = {};
+    //   });
+    // });
 
     it('should render something', () => {
         const { Component } = setup()
@@ -50,6 +67,15 @@ describe('components', () => {
       expect(signOut.text()).toEqual('Sign Out')
     })
 
+    it.skip('should call props.signOutUser and props.clearFavorites if sign out is clicked', () => {
+
+      const { Component } = setup({name: 'jeff', localStorage: jest.fn()});
+      const signOut = Component.find('.sign-up-out-btns')
+      signOut.simulate('click');
+
+      // expect(props.signOutUser).toBeCalled();
+      expect(signOut.text()).toEqual('Sign Up')
+    })
 
   })
 })

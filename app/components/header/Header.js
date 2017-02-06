@@ -5,9 +5,9 @@ import { Link } from 'react-router'
 const Header = (props) => {
 
   const signOutUser = () => {
-    localStorage.clear();
     props.clearFavorites();
     props.signOutClick(null);
+    localStorage.clear();
   }
 
   const display = () => {
