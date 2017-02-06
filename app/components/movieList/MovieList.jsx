@@ -16,17 +16,9 @@ const MovieList = (props) => {
           noUser : props.favorites.length ?
               movies : noFavorites;
       default:
-        return movies;
+        return movies.length > 0 ? movies : <p className='no-movies'>No movies found.</p>;
     }
   }
-
-  // const search = () => {
-  //   if(path === '/') {
-  //     return(
-  //       <Search />
-  //     )
-  //   }
-  // }
 
   const movies = props.movies.map(obj => {
     return (
@@ -37,8 +29,7 @@ const MovieList = (props) => {
   return (
     <div className='movie-list'>
       <Search path={props.location.pathname}/>
-        {/* {search()} */}
-        {pathCheck()}
+      {pathCheck()}
     </div>
   );
 };
