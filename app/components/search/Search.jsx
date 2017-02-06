@@ -19,10 +19,11 @@ class Search extends Component {
   render() {
     const { searchValue } = this.state
     return (
-      <div className='search-input'>
+      <div className='search-field'>
         <input placeholder='Search Movies'
+               className='search-input input'
                onChange={(e) => this.setState({ searchValue: e.target.value })}/>
-        <button className='button'
+        <button className='search-btn btn'
                 onClick={() => this.getResults()}>
           SEARCH
         </button>

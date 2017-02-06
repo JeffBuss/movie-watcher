@@ -11,12 +11,13 @@ $darkBG: #5a5a5a;
 @mixin buttonStyles {
   &:hover {
         cursor: pointer;
-        background-color: $lightBG;
+        // background-color: #e67e22;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
     }
   &:focus{
     outline: none;
   }
-  background-color: $medBG;
+  background-color: #f1c40f;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
@@ -26,8 +27,12 @@ $darkBG: #5a5a5a;
 @mixin inputStyles {
   margin: .5vw;
   border-radius: 5px;
-  border: none;
+  border: 2px solid $medBG;
   height: 3vh;
+  &:focus{
+    border: 2px solid #f1c40f;
+    outline: none;
+  }
 }
 
 // global
@@ -90,11 +95,11 @@ body {
 .sign-up-out-btns {
   position: absolute;
   right: 0;
-  top: 0;
+    top: 0;
 }
 
-favorites {
-
+.login-error {
+  color: red;
 }
 
 // moviecard
@@ -158,6 +163,64 @@ favorites {
   }
 }
 
+.error-poster {
+  height: 95%;
+  width: 95%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &:hover {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    cursor: pointer;
+  }
+}
+
+//MovieDetail
+
+.movie-detail-card {
+  position: relative;
+  margin: 4vw;
+}
+
+.movie-detail-poster {
+  position: relative;
+  width: 45vw;
+  left: 0;
+}
+
+.movie-detail-poster-fav {
+  position: relative;
+}
+
+.movie-detail-info {
+  position: absolute;
+  width: 45vw;
+  right: 0;
+}
+
+.movie-title {
+  font-size: 3em;
+  font-family: $sansFont;
+}
+
+.movie-release {
+  font-size: 2em;
+  font-family: $sansFont;
+}
+
+.movie-overview {
+  font-size: 1.5em;
+  font-family: $serifFont;
+}
+
+.movie-detail-fav {
+  position: absolute;
+  bottom: 0;
+  left: 45vw;
+  margin-top: vw;
+}
+
 // movielist
 
 .movie-list {
@@ -167,7 +230,57 @@ favorites {
   align-items: center;
 }
 
+.fav-error {
+  position: absolute;
+  font-family: $serifFont;
+  color: red;
+  font-size: 1.5em;
+  text-align: right;
+  margin: 3vw;
+  right: 0;
+}
+
+// search
+
+.search-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 3vw;
+}
+
+
 // signin
+
+.signin-field {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.signin-btn {
+  position: absolute;
+  right: 0;
+}
+
+.signin-error-field {
+  display: inline-block;
+}
+
+// sign-up
+
+.sign-up-field {
+  position: absolute;
+  left: 3vmax;
+  width: 500px;
+}
+
+.signup-name .signup-email .signup-password {
+  width: 400px;
+}
+
 
 @media screen and (max-width: 480px) {
     body {
@@ -175,7 +288,7 @@ favorites {
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (min-width: 480px) and (max-width: 950px) {
     body {
         background-color: #F1A9A0;
     }
