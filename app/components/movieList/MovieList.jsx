@@ -6,7 +6,7 @@ const MovieList = (props) => {
 
   const noUser = <p className='fav-error'>Please sign in to view and add to your favorites.
                     <br/> Or sign up above!</p>;
-  const noFavorites = <p>No favorites.</p>
+  const noFavorites = <p className='no-fav-error'>No favorites.</p>
   const path = props.router.location.pathname;
 
   const pathCheck = () => {
