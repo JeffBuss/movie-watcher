@@ -1,6 +1,6 @@
 import React from 'react';
-import './signUp-style';
 import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 class SignUp extends React.Component {
   constructor() {
@@ -54,11 +54,13 @@ class SignUp extends React.Component {
     } else { return false }
   }
 
-
   render(){
     const { name, email, password } = this.state
     return(
       <div>
+        <Link to='/'>
+          <button className='btn back-btn'>Back</button>
+        </Link>
         <form
           id='sign-up-form'
           className='sign-up-field'
