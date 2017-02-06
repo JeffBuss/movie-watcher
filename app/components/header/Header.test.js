@@ -4,14 +4,14 @@ import Header from './Header';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
-const fakeStore = configureMockStore()({ user: null })
+const fakeStore = configureMockStore()({ })
 
-const setup = () => {
+const setup = (user = null) => {
   const props = {
-    fetchMovies: jest.fn(),
-    getUser: jest.fn(),
-    getFavorites: jest.fn(),
-    resetFavorites: jest.fn()
+    user: user,
+    pathname: '/',
+    clearFavorites: jest.fn(),
+    signOutClick: jest.fn()
   }
 
   const wrapper = mount(
@@ -31,10 +31,25 @@ const setup = () => {
 describe('components', () => {
   describe('Header', () => {
 
-    it.skip('should render something', () => {
+    it('should render something', () => {
         const { Component } = setup()
         expect(Component.length).toEqual(1)
-      })
+    })
+
+    it('should display sign up button if no user signed in', () => {
+      const { Component } = setup();
+      const signOut = Component.find('.sign-up-out-btns')
+      expect(signOut.length).toEqual(1)
+      expect(signOut.text()).toEqual('Sign Up')
+    })
+
+    it('should display a sign OUT button if a user is signed in', () => {
+      const { Component } = setup({name: 'jeff'});
+      const signOut = Component.find('.sign-up-out-btns')
+      expect(signOut.length).toEqual(1)
+      expect(signOut.text()).toEqual('Sign Out')
+    })
+
 
   })
 })
