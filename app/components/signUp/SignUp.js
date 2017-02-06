@@ -59,25 +59,27 @@ class SignUp extends React.Component {
     const { name, email, password } = this.state
     return(
       <div>
-        <form id='sign-up-form'>
+        <form
+          id='sign-up-form'
+          className='sign-up-field'
+          >
           <input placeholder='Name'
                  value={name}
                  onChange={(e) => this.setState({ name: e.target.value })}
-                 className='name-input'/>
-
+                 className='signup-name input'/>
+                 <br/>
           <input placeholder='Email'
                  value={email}
                  onChange={(e) => this.setState({ email: e.target.value })}
-                 className='email input'/>
-
+                 className='signup-email input'/>
           {this.emailExistsError(this.state.error)}
-
+                  <br/>
           <input placeholder='Password'
                  value={password}
                  onChange={(e) => this.setState({ password: e.target.value })}
-                 className='email input'/>
-
-          <button className='btn'
+                 className='signup-password input'/>
+                <br/>
+          <button className='signup-btn btn'
                   disabled={!this.state.email || !this.state.name || !this.state.password}
                   onClick={(e) => {
                     e.preventDefault();

@@ -68,11 +68,16 @@ const MovieCard = (props) => {
       {/* <p className='movie-release'>{props.release_date}</p> */}
       {favoriteBtn(props)}
       <Link to={`/movies/${props.title}`}>
-        <img alt={props.title}
+        <object
              className='movie-poster'
-             src={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}
+             data={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}
              onClick={() => props.setCurrentMovie(props)}
-             />
+             >
+          <img 
+            src='../assets/no-poster-art.png'
+            alt={props.title}
+            className='error-poster' />
+        </object>
       </Link>
     </div>
   );
