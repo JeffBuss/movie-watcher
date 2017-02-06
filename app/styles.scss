@@ -5,8 +5,10 @@ $serifFont: 'Average', serif;
 $lightBG: #fafafa;
 $medBG: #bababa;
 $darkBG: #5a5a5a;
+$primary: #F22613;
+$secondary: #f1c40f;
 
-// mixins
+//////// mixins
 
 @mixin buttonStyles {
   &:hover {
@@ -22,7 +24,7 @@ $darkBG: #5a5a5a;
   &:focus{
     outline: none;
   }
-  background-color: #f1c40f;
+  background-color: $secondary;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
@@ -35,16 +37,17 @@ $darkBG: #5a5a5a;
   border: 2px solid $medBG;
   height: 3vh;
   &:focus{
-    border: 2px solid #f1c40f;
+    border: 2px solid $secondary;
     outline: none;
   }
 }
 
-// global
+//////// global
 
 a {
   text-decoration: none;
 }
+
 body {
   background-color: $lightBG;
 }
@@ -57,7 +60,7 @@ body {
   @include inputStyles;
 }
 
-// header
+//////// header
 
 .header {
   font-family: $sansFont;
@@ -71,7 +74,7 @@ body {
   font-family: $sansFont;
   font-size: 10vh ;
   text-decoration: none;
-  color: #F22613;
+  color: $primary;
   display: flex;
   position: absolute;
   left: 0;
@@ -97,14 +100,14 @@ body {
 .sign-up-out-btns {
   position: absolute;
   right: 0;
-  margin-right: 3vw;
+  margin-right: 3.25vw;
 }
 
 .login-error {
-  color: red;
+  color: $primary;
 }
 
-// moviecard
+//////// moviecard
 
 .fav {
   position: absolute;
@@ -178,7 +181,7 @@ body {
   }
 }
 
-//MovieDetail
+////////MovieDetail
 
 .movie-detail-card {
   position: relative;
@@ -223,24 +226,25 @@ body {
   margin-top: vw;
 }
 
+//////// movielist
+
 .detail-back-btn {
   margin-left: -0.05vw;
-  margin-bottom: 25px;
+  margin-bottom: 2.5vh;
 }
-
-// movielist
 
 .movie-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 }
 
 .fav-error {
   position: absolute;
-  font-family: $serifFont;
-  color: red;
+  font-family: $sansFont;
+  color: $primary;
   font-size: 1.5em;
   text-align: right;
   margin: 10vw 3vw;
@@ -248,14 +252,14 @@ body {
 }
 
 .no-fav-error {
-  font-family: $serifFont;
-  color: red;
+  font-family: $sansFont;
+  color: $primary;
   font-size: 1.5em;
   text-align: centerf;
   margin: 10vw;
 }
 
-// search
+//////// search
 
 .search-field {
   display: flex;
@@ -265,7 +269,7 @@ body {
   margin-left: 3vw;
 }
 
-// signin
+//////// signin
 
 .signin-field {
   display: block;
@@ -277,11 +281,11 @@ body {
   display: inline-block;
 }
 
-// sign-up
+//////// sign-up
 
 .submit-error {
-  color: red;
-  font-family: 'Fjalla One', sans-serif;
+  color: $primary;
+  font-family: $sansFont;
   font-size: 1.25em;
   margin-left: 10px;
 }
@@ -304,16 +308,3 @@ body {
   height: 30px;
   margin-left: 3.5vmax;
 }
-
-//
-// @media screen and (max-width: 480px) {
-//     body {
-//         background-color: #DCC6E0;
-//     }
-// }
-//
-// @media screen and (min-width: 480px) and (max-width: 950px) {
-//     body {
-//         background-color: #F1A9A0;
-//     }
-// }
