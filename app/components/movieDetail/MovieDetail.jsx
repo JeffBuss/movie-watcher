@@ -81,7 +81,8 @@ console.log(props);
       <div className='movie-detail-poster-fav'>
         <div className='movie-detail-fav'>{favoriteBtn(movie)}</div>
         <img className='movie-detail-poster'
-             src={`https://image.tmdb.org/t/p/w342/${poster_path}`}>
+             src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
+             alt='no poster art available'>
         </img>
       </div>
     </div>
