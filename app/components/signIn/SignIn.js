@@ -39,6 +39,13 @@ class SignIn extends React.Component {
     );
   }
 
+  enterKey(e) {
+    const { email, password } = this.state;
+    if(e.key === 'Enter' && email && password) {
+      this.signIn()
+    }
+  }
+
   userCheck(){
     const { user } = this.props;
     const { email, password } = this.state;
@@ -53,6 +60,7 @@ class SignIn extends React.Component {
               placeholder="Email"
               type='text'
               value={email}
+              onKeyPress={this.enterKey.bind(this)}
               onChange={e => this.setState({email: e.target.value})}/>
               <br/>
             <input
@@ -60,6 +68,7 @@ class SignIn extends React.Component {
               type="password"
               placeholder="Password"
               value={password}
+              onKeyPress={this.enterKey.bind(this)}
               onChange={e => this.setState({password: e.target.value})}/>
               <br/>
             <div className='signin-error-field'>

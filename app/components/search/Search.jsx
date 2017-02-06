@@ -44,7 +44,7 @@ class Search extends Component {
         <button className='search-btn btn'
                 disabled={!this.state.searchValue}
                 onClick={() => this.getLatest()}>
-          CLEAR
+          RESET
         </button>
       </div>
     )
