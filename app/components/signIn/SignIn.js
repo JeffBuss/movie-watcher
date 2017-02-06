@@ -27,7 +27,7 @@ class SignIn extends React.Component {
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
-    .catch(err => this.setState({ error: true }))
+    .catch(err => this.setState({ error: true, password: '' }))
   }
 
   displayError(err) {
