@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './search-style'
 import SearchContainer from '../../containers/searchContainer/SearchContainer';
 
 class Search extends Component {

@@ -1,29 +1,29 @@
 import React from 'react';
 import { mount  } from 'enzyme';
-import AppContainer from './AppContainer';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
+
+import FavoritesContainer from './FavoritesContainer';
 
 const fakeStore = configureMockStore()({ user: null })
 
 const setup = () => {
   const props = {
-    fetchMovies: jest.fn(),
-    getUser: jest.fn(),
-    getFavorites: jest.fn(),
-    resetFavorites: jest.fn()
+    addFav: jest.fn(),
+    removeFav: jest.fn(),
+    setCurrentMovie: jest.fn()
   }
 
   const wrapper = mount(
     // if you were to test your Provider or Container components you'd need the following
     <Provider store={fakeStore}>
-      <AppContainer {...props} />
+      <FavoritesContainer {...props} />
     </Provider>
 
-    /* <AppContainer {...props} />  */
+    /* <FavoritesContainer {...props} />  */
   )
 
-  const Component = wrapper.find(AppContainer)
+  const Component = wrapper.find(FavoritesContainer)
   //can't we just pass wrapper below?
 
 
@@ -34,7 +34,7 @@ const setup = () => {
 }
 
 describe('components', () => {
-  describe('AppContainer', () => {
+  describe('FavoritesContainer', () => {
 
     it.only('should render something', () => {
         const { Component } = setup()

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import MovieDetailContainer from '../../containers/movieDetailContainer/MovieDetailContainer';
-// import './movieCard-style';
 
 const MovieDetail = (props) => {
   const {id, user, title, poster_path,

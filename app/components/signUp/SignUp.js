@@ -75,6 +75,7 @@ class SignUp extends React.Component {
           {this.emailExistsError(this.state.error)}
                   <br/>
           <input placeholder='Password'
+                 type='password'
                  value={password}
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='signup-password input'/>

@@ -9,16 +9,16 @@ $darkBG: #5a5a5a;
 // mixins
 
 @mixin buttonStyles {
-  &:disabled {
-    cursor: default;
-    color: white;
-    background-color: grey;
-    box-shadow: none;
-  }
   &:hover {
         cursor: pointer;
         // background-color: #e67e22;
         box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    }
+    &:disabled {
+      cursor: default;
+      color: white;
+      background-color: grey;
+      box-shadow: none;
     }
   &:focus{
     outline: none;
@@ -276,6 +276,11 @@ body {
 }
 
 // sign-up
+
+.submit-error {
+  color: red;
+  font-family: 'Fjalla One', sans-serif;
+}
 
 .sign-up-field {
   position: absolute;

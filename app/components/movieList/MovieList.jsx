@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './movieList-style';
 import MovieCard from '../../containers/movieContainer/MovieContainer';
 import Search from '../search/Search';
 
