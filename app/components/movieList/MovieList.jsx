@@ -20,14 +20,6 @@ const MovieList = (props) => {
     }
   }
 
-  // const search = () => {
-  //   if(path === '/') {
-  //     return(
-  //       <Search />
-  //     )
-  //   }
-  // }
-
   const movies = props.movies.map(obj => {
     return (
       <MovieCard key={obj.id} {...obj} />
@@ -37,8 +29,7 @@ const MovieList = (props) => {
   return (
     <div className='movie-list'>
       <Search path={props.location.pathname}/>
-        {/* {search()} */}
-        {pathCheck()}
+      {pathCheck()}
     </div>
   );
 };
