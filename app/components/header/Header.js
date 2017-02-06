@@ -57,7 +57,7 @@ const Header = (props) => {
              Tomatoes
           </span>
         </Link>
-      {(display())}
+        <div>{(display())}</div>
     </div>
   )
 }
