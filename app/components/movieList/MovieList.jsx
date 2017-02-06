@@ -16,7 +16,7 @@ const MovieList = (props) => {
           noUser : props.favorites.length ?
               movies : noFavorites;
       default:
-        return movies;
+        return movies.length > 0 ? movies : <p className='no-movies'>No movies found.</p>;
     }
   }
 

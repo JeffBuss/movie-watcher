@@ -238,26 +238,31 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
 }
 
-.fav-error {
+.fav-error, .no-movies {
   position: absolute;
   font-family: $sansFont;
   color: $primary;
   font-size: 1.5em;
-  text-align: right;
-  margin: 10vw 3vw;
-  right: 0;
+  text-align: center;
+  margin: 10vw auto;
 }
 
 .no-fav-error {
   font-family: $sansFont;
   color: $primary;
   font-size: 1.5em;
-  text-align: centerf;
+  text-align: center;
   margin: 10vw;
 }
+
+// .no-movies {
+//   font-family: $sansFont;
+//   color: $primary;
+//   font-size: 1.5em;
+//   margin: auto;
+// }
 
 //////// search
 
