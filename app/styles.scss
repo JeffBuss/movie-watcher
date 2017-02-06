@@ -9,6 +9,12 @@ $darkBG: #5a5a5a;
 // mixins
 
 @mixin buttonStyles {
+  &:disabled {
+    cursor: default;
+    color: white;
+    background-color: grey;
+    box-shadow: none;
+  }
   &:hover {
         cursor: pointer;
         // background-color: #e67e22;
