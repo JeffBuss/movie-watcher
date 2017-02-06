@@ -44,6 +44,10 @@ class Search extends Component {
     if(this.props.path === '/') {
       return (
         <div>
+          <button className='search-btn btn'
+            onClick={() => this.getLatest()}>
+            Latest Movies
+          </button>
           <input placeholder='Search Movies'
             className='search-input input'
             value={this.state.searchValue}
@@ -52,12 +56,7 @@ class Search extends Component {
             <button className='search-btn btn'
               disabled={!this.state.searchValue}
               onClick={() => this.getResults()}>
-              SEARCH
-            </button>
-            <button className='search-btn btn'
-              disabled={!this.state.searchValue}
-              onClick={() => this.getLatest()}>
-              RESET
+              Search
             </button>
           </div>
         )
