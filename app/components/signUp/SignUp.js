@@ -13,13 +13,6 @@ class SignUp extends React.Component {
     }
   }
 
-  enterKey(e) {
-    const { name, email, password } = this.state
-    if(e.key === 'Enter' && name && email && password) {
-      console.log('ml');
-    }
-  }
-
   addNewUser() {
     const { name, email, password } = this.state
     fetch('/api/users/new', {
@@ -42,6 +35,7 @@ class SignUp extends React.Component {
   }
 
   emailExistsError(err) {
+    let { name, email, password } = this.state
     switch(err) {
       case 'EXISTING_USER':
         return(
@@ -50,7 +44,9 @@ class SignUp extends React.Component {
       case 'INVALID_EMAIL':
         return (
           <p className='submit-error'>Please enter a valid email address</p>
-        )
+        );
+      default:
+        return;
     }
   }
 
@@ -71,6 +67,12 @@ class SignUp extends React.Component {
     }
   }
 
+  checkFields() {
+    const { name, email, password } = this.state;
+    if(!name && !email && !password || !email)
+      this.setState({ error: '' })
+  }
+
   render(){
     const { name, email, password, error } = this.state
     return(
@@ -84,21 +86,21 @@ class SignUp extends React.Component {
           >
           <input placeholder='Name'
                  value={name}
-                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ name: e.target.value })}
+                 onKeyUp={this.checkFields.bind(this)}
                  className='signup-name input'/>
                  <br/>
           <input placeholder='Email'
+                 onKeyUp={this.checkFields.bind(this)}
                  value={email}
-                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ email: e.target.value })}
                  className='signup-email input'/>
           {this.emailExistsError(error)}
                   <br/>
           <input placeholder='Password'
+                 onKeyUp={this.checkFields.bind(this)}
                  type='password'
                  value={password}
-                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='signup-password input'/>
                 <br/>
