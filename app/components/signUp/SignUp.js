@@ -13,25 +13,32 @@ class SignUp extends React.Component {
     }
   }
 
+  enterKey(e) {
+    const { name, email, password } = this.state
+    if(e.key === 'Enter' && name && email && password) {
+      console.log('ml');
+    }
+  }
+
   addNewUser() {
-  const { name, email, password } = this.state
-  fetch('/api/users/new', {
-    method: 'POST',
-    headers: {"Content-Type": "application/json"},
-    body:JSON.stringify({ name, email, password })
-  })
-  .then(() =>
-  fetch("/api/users", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({email, password})
-  })
-  .then(res => res.json())
-  .then(user => {
-    this.props.signInClick(user.data);
-    if(user) {browserHistory.push('/')}
-  }))
-  .catch(err => this.setState({ error: 'EXISTING_USER' }))
+    const { name, email, password } = this.state
+    fetch('/api/users/new', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body:JSON.stringify({ name, email, password })
+    })
+      .then(() =>
+        fetch("/api/users", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({email, password})
+        })
+        .then(res => res.json())
+        .then(user => {
+          this.props.signInClick(user.data);
+          if(user) {browserHistory.push('/')}
+        }))
+        .catch(err => this.setState({ error: 'EXISTING_USER' }))
   }
 
   emailExistsError(err) {
@@ -54,8 +61,18 @@ class SignUp extends React.Component {
     } else { return false }
   }
 
+  attemptSignIn(e) {
+    e.preventDefault();
+    if(!this.state.email || !this.testEmail()) {
+      this.setState({ error: 'INVALID_EMAIL' })
+    } else {
+      this.testEmail()
+      this.addNewUser();
+    }
+  }
+
   render(){
-    const { name, email, password } = this.state
+    const { name, email, password, error } = this.state
     return(
       <div>
         <Link to='/'>
@@ -67,32 +84,27 @@ class SignUp extends React.Component {
           >
           <input placeholder='Name'
                  value={name}
+                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ name: e.target.value })}
                  className='signup-name input'/>
                  <br/>
           <input placeholder='Email'
                  value={email}
+                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ email: e.target.value })}
                  className='signup-email input'/>
-          {this.emailExistsError(this.state.error)}
+          {this.emailExistsError(error)}
                   <br/>
           <input placeholder='Password'
                  type='password'
                  value={password}
+                 onKeyPress={this.enterKey.bind(this)}
                  onChange={(e) => this.setState({ password: e.target.value })}
                  className='signup-password input'/>
                 <br/>
           <button className='signup-btn btn'
-                  disabled={!this.state.email || !this.state.name || !this.state.password}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if(!email || !this.testEmail()) {
-                      this.setState({ error: 'INVALID_EMAIL' })
-                    } else {
-                      this.testEmail()
-                      this.addNewUser();
-                    }
-                  }}>
+                  disabled={!email || !name || !password}
+                  onClick={this.attemptSignIn.bind(this)}>
             JOIN!
           </button>
         </form>
