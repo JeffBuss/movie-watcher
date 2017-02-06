@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchContainer from '../../containers/searchContainer/SearchContainer';
+import { Link } from 'react-router';
 
 class Search extends Component {
   constructor(props) {
@@ -27,25 +28,48 @@ class Search extends Component {
       this.getResults();
   }
 
+  toggleButton() {
+    return (
+        <Link to={this.props.path != '/favorites' ? '/favorites' : '/'}>
+        <button
+          className='show-fav-btn btn'>
+          {this.props.path != '/favorites' ? 'Favorites' : 'Home'}
+        </button>
+      </Link>
+    )
+  }
+
+  searchField() {
+    console.log(this.props)
+    if(this.props.path === '/') {
+      return (
+        <div>
+          <input placeholder='Search Movies'
+            className='search-input input'
+            value={this.state.searchValue}
+            onKeyPress={this.enterKey.bind(this)}
+            onChange={(e) => this.setState({ searchValue: e.target.value })}/>
+            <button className='search-btn btn'
+              disabled={!this.state.searchValue}
+              onClick={() => this.getResults()}>
+              SEARCH
+            </button>
+            <button className='search-btn btn'
+              disabled={!this.state.searchValue}
+              onClick={() => this.getLatest()}>
+              RESET
+            </button>
+          </div>
+        )
+    }
+  }
+
   render() {
     const { searchValue } = this.state
     return (
       <div className='search-field'>
-        <input placeholder='Search Movies'
-               className='search-input input'
-               value={this.state.searchValue}
-               onKeyPress={this.enterKey.bind(this)}
-               onChange={(e) => this.setState({ searchValue: e.target.value })}/>
-        <button className='search-btn btn'
-                disabled={!this.state.searchValue}
-                onClick={() => this.getResults()}>
-          SEARCH
-        </button>
-        <button className='search-btn btn'
-                disabled={!this.state.searchValue}
-                onClick={() => this.getLatest()}>
-          RESET
-        </button>
+        {this.toggleButton()}
+        {this.searchField()}
       </div>
     )
   }
