@@ -32,8 +32,6 @@ const setup = (user = null) => {
 describe('components', () => {
   describe('Header', () => {
 
-
-
     // beforeEach(function () {
     //   var store = {};
     //
