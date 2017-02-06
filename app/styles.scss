@@ -62,8 +62,8 @@ body {
 .header {
   // border: 2px solid red;
   font-family: $sansFont;
-  height: 15vh;
-  margin: 3vmax;
+  margin: 3vh 3vw 6vh 3vw;
+  // height: 15vh;
   border-radius: 5px;
   // display: flex;
   // flex-wrap: nowrap;
@@ -85,7 +85,6 @@ body {
 
 .logo-img {
   height: 10vh;
-  // width: 10vw;
 }
 
 .show-fav-btn {
@@ -97,7 +96,8 @@ body {
 .welcome {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 7vh;
+  border: 2px solid red;
 }
 
 .sign-up-out-btns {
