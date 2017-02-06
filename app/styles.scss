@@ -60,15 +60,10 @@ body {
 // header
 
 .header {
-  // border: 2px solid red;
   font-family: $sansFont;
-  margin: 3vh 3vw 6vh 3vw;
-  // height: 15vh;
+  margin: 3vh 0 0 3vw;
+  height: 15vh;
   border-radius: 5px;
-  // display: flex;
-  // flex-wrap: nowrap;
-  // align-items: center;
-  // justify-content: center;
   position: relative;
 }
 
@@ -95,18 +90,14 @@ body {
 
 .welcome {
   position: absolute;
-  right: 0;
+  right: 3vw;
   top: 7vh;
-  border: 2px solid red;
 }
 
 .sign-up-out-btns {
-  // float: right;
-
-  // text-align: right;
   position: absolute;
   right: 0;
-  //   top: 0;
+  margin-right: 3vw;
 }
 
 .login-error {
@@ -175,8 +166,8 @@ body {
 }
 
 .error-poster {
-  height: 95%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -247,8 +238,16 @@ body {
   color: red;
   font-size: 1.5em;
   text-align: right;
-  margin: 3vw;
+  margin: 10vw 3vw;
   right: 0;
+}
+
+.no-fav-error {
+  font-family: $serifFont;
+  color: red;
+  font-size: 1.5em;
+  text-align: centerf;
+  margin: 10vw;
 }
 
 // search
@@ -266,17 +265,7 @@ body {
 .signin-field {
   display: block;
   text-align: right;
-  // position: absolute;
-  // right: 0;
-  // bottom: 0;
-}
-
-.signin-btn {
-  // border: 1px solid blue;
-  // margin-left: 100px;
-  // display: inline-block;
-  // position: absolute;
-  // right: 0;
+  margin-right: 3vw;
 }
 
 .signin-error-field {
@@ -288,6 +277,7 @@ body {
 .submit-error {
   color: red;
   font-family: 'Fjalla One', sans-serif;
+  font-size: 1.25em;
   margin-left: 10px;
 }
 
@@ -310,15 +300,15 @@ body {
   margin-left: 3.5vmax;
 }
 
-
-@media screen and (max-width: 480px) {
-    body {
-        background-color: #DCC6E0;
-    }
-}
-
-@media screen and (min-width: 480px) and (max-width: 950px) {
-    body {
-        background-color: #F1A9A0;
-    }
-}
+//
+// @media screen and (max-width: 480px) {
+//     body {
+//         background-color: #DCC6E0;
+//     }
+// }
+//
+// @media screen and (min-width: 480px) and (max-width: 950px) {
+//     body {
+//         background-color: #F1A9A0;
+//     }
+// }
