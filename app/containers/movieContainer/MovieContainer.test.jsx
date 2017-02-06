@@ -3,28 +3,29 @@ import { mount  } from 'enzyme';
 import MovieContainer from './MovieContainer';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
+import { createMemoryHistory } from 'history';
+import { Router, Route } from 'react-router';
+import MovieDetailContainer from '../movieDetailContainer/MovieDetailContainer';
 
-const fakeStore = configureMockStore()({ user: null })
-
+const fakeStore = configureMockStore()({ user: {name: 'Limbo'} })
 const setup = () => {
   const props = {
     addFav: jest.fn(),
     removeFav: jest.fn(),
-    setCurrentMovie: jest.fn()
+    favorites: [ { title: 'free willy' }],
+    setCurrentMovie: jest.fn(),
+    movies: [ { title: 'free willy' }],
   }
 
+  const history = createMemoryHistory()
+
   const wrapper = mount(
-    // if you were to test your Provider or Container components you'd need the following
     <Provider store={fakeStore}>
       <MovieContainer {...props} />
     </Provider>
-
-    /* <MovieContainer {...props} />  */
   )
 
   const Component = wrapper.find(MovieContainer)
-  //can't we just pass wrapper below?
-
 
   return {
     props,
@@ -32,26 +33,29 @@ const setup = () => {
   }
 }
 
-describe('components', () => {
-  describe('MovieContainer', () => {
+describe('MovieContainer', () => {
 
-    it.only('should render something', () => {
-        const { Component } = setup()
-        // expect(Component.find().length).toEqual(1)
-        expect(Component.length).toEqual(1)
-      })
-
-    // it('should call addTodo when Add Todo button is clicked', () => {
-    //   const { props, Component } = setup()
-    //
-    //   let form = Component.find('form')
-    //
-    //   form.simulate('submit')
-    //   // console.log(props);
-    //   expect(props.handleSubmit).toBeCalled()
-    //
-    // // Or to verify how many times a function has been called
-    //   expect(props.handleSubmit.mock.calls.length).toBe(1)
-    // })
+  it('should render something', () => {
+      const { Component } = setup()
+      expect(Component.length).toEqual(1)
   })
+
+  it('should render a movie card', () => {
+      const { Component } = setup()
+      expect(Component.find('.movie-card').length).toEqual(1)
+  })
+
+  it('should render a movie poster img', () => {
+      const { Component } = setup()
+      expect(Component.find('img').length).toEqual(1);
+  })
+
+  //can't get around the <Link> error
+  it('should call setCurrentMovie if the img is clicked', () => {
+    const { Component } = setup();
+    const poster = Component.find('img')
+    poster.simulate('click')
+    expect(props.setCurrentMovie.mock.calls.length).toBe(1)
+  })
+
 })
