@@ -19,11 +19,12 @@ class Search extends Component {
     fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=74e395a1a0373d4f389e8f007c86c5e7&language=en-US')
       .then(data => data.json())
       .then(data => this.props.loadResults(data.results))
-      .then(() => this.setState({ searchValue: '' }))    
+      .then(() => this.setState({ searchValue: '' }))
   }
 
   enterKey(e) {
-    console.log('fml');
+    if(e.key === 'Enter' && this.state.searchValue)
+      this.getResults();
   }
 
   render() {
