@@ -68,6 +68,9 @@ console.log(props);
 
   return (
     <div className='movie-detail-card'>
+      <Link to='/'>
+        <button className='btn detail-back-btn'>Back</button>
+      </Link>
       <div className='movie-detail-info'>
         <br/>
         <h1 className='movie-title'>{title}</h1>

@@ -8,7 +8,7 @@ $darkBG: #5a5a5a;
 $primary: #F22613;
 $secondary: #f1c40f;
 
-// mixins
+//////// mixins
 
 @mixin buttonStyles {
   &:hover {
@@ -228,6 +228,11 @@ body {
 
 //////// movielist
 
+.detail-back-btn {
+  margin-left: -0.05vw;
+  margin-bottom: 2.5vh;
+}
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +243,7 @@ body {
 
 .fav-error {
   position: absolute;
-  font-family: $serifFont;
+  font-family: $sansFont;
   color: $primary;
   font-size: 1.5em;
   text-align: right;
@@ -247,7 +252,7 @@ body {
 }
 
 .no-fav-error {
-  font-family: $serifFont;
+  font-family: $sansFont;
   color: $primary;
   font-size: 1.5em;
   text-align: centerf;
