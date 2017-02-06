@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './search-style'
 import SearchContainer from '../../containers/searchContainer/SearchContainer';
 
 class Search extends Component {
@@ -24,6 +23,7 @@ class Search extends Component {
                className='search-input input'
                onChange={(e) => this.setState({ searchValue: e.target.value })}/>
         <button className='search-btn btn'
+                disabled={!this.state.searchValue}
                 onClick={() => this.getResults()}>
           SEARCH
         </button>

@@ -38,6 +38,13 @@ describe('actions', () => {
     expect(actions.removeFavorites(movie)).toEqual(removeFavResponse)
   })
 
+  it('should create an action to clear all favs', () => {
+    const clearResponse = {
+      type: 'CLEAR_FAVORITES'
+    }
+    expect(actions.clearFavorites()).toEqual(clearResponse);
+  })
+
   it('should create an action to set the current movie', () => {
     const movie = {title: 'free willy'}
     const setCurrentResponse = {

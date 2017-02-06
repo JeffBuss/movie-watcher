@@ -1,5 +1,4 @@
 import React from "react";
-// import './signIn-style';
 
 class SignIn extends React.Component {
   constructor() {
@@ -45,7 +44,7 @@ class SignIn extends React.Component {
     const { email, password } = this.state;
     if(this.props.pathname !== "/join"){
       if(user) {
-        return <p className='welcome'>Welcome back, {user.name}!</p>
+        return <p className='welcome'>Welcome, {user.name}!</p>
       } else {
         return (
           <div className='signin-field'>
@@ -66,10 +65,10 @@ class SignIn extends React.Component {
             <div className='signin-error-field'>
               {this.displayError(this.state.error)}
               <button className="signin-btn btn"
-                onClick={() => {
-                  this.signIn();
-                  this.setState({ email: '', password: '' })
-                }}>
+                      disabled={!this.state.email || !this.state.password}
+                      onClick={() => {
+                        this.signIn();
+                        this.setState({ email: '', password: '' })}}>
                 Sign In
               </button>
             </div>
