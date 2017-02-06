@@ -11,8 +11,13 @@ $darkBG: #5a5a5a;
 @mixin buttonStyles {
   &:hover {
         cursor: pointer;
-        // background-color: #e67e22;
         box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    }
+    &:disabled {
+      cursor: default;
+      color: white;
+      background-color: grey;
+      box-shadow: none;
     }
   &:focus{
     outline: none;
@@ -21,7 +26,7 @@ $darkBG: #5a5a5a;
   border-radius: 5px;
   border-style: none;
   margin: .5vw;
-  height: 3vh;
+  height: 30px;
 }
 
 @mixin inputStyles {
@@ -250,7 +255,6 @@ body {
   margin-left: 3vw;
 }
 
-
 // signin
 
 .signin-field {
@@ -271,14 +275,29 @@ body {
 
 // sign-up
 
+.submit-error {
+  color: red;
+  font-family: 'Fjalla One', sans-serif;
+  margin-left: 10px;
+}
+
 .sign-up-field {
   position: absolute;
   left: 3vmax;
   width: 500px;
 }
 
-.signup-name .signup-email .signup-password {
-  width: 400px;
+.signup-name, .signup-email, .signup-password, .signup-btn {
+  width: 300px;
+  height: 30px;
+  font-size: 18px;
+}
+
+
+.back-btn {
+  width: 50px;
+  height: 30px;
+  margin-left: 3.5vmax;
 }
 
 

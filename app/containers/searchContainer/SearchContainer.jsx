@@ -6,7 +6,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loadResults: (movies) => {
       dispatch(loadMovies(movies))
-    }
+    },
   }
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-// import './movieCard-style';
 
 const MovieCard = (props) => {
   const getMatchedFavID = (props) => {
@@ -73,7 +72,7 @@ const MovieCard = (props) => {
              data={`https://image.tmdb.org/t/p/w342/${props.poster_path}`}
              onClick={() => props.setCurrentMovie(props)}
              >
-          <img 
+          <img
             src='../assets/no-poster-art.png'
             alt={props.title}
             className='error-poster' />

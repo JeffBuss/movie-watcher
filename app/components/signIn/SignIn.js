@@ -1,5 +1,4 @@
 import React from "react";
-// import './signIn-style';
 
 class SignIn extends React.Component {
   constructor() {
@@ -28,7 +27,7 @@ class SignIn extends React.Component {
     .then(() => fetch(`/api/users/${this.props.user.id}/favorites`)
       .then(res => res.json())
       .then(favs => this.props.getFavorites(favs.data)))
-    .catch(err => this.setState({ error: true }))
+    .catch(err => this.setState({ error: true, password: '' }))
   }
 
   displayError(err) {
@@ -40,12 +39,19 @@ class SignIn extends React.Component {
     );
   }
 
+  enterKey(e) {
+    const { email, password } = this.state;
+    if(e.key === 'Enter' && email && password) {
+      this.signIn()
+    }
+  }
+
   userCheck(){
     const { user } = this.props;
     const { email, password } = this.state;
     if(this.props.pathname !== "/join"){
       if(user) {
-        return <p className='welcome'>Welcome back, {user.name}!</p>
+        return <p className='welcome'>Welcome, {user.name}!</p>
       } else {
         return (
           <div className='signin-field'>
@@ -54,6 +60,7 @@ class SignIn extends React.Component {
               placeholder="Email"
               type='text'
               value={email}
+              onKeyPress={this.enterKey.bind(this)}
               onChange={e => this.setState({email: e.target.value})}/>
               <br/>
             <input
@@ -61,15 +68,16 @@ class SignIn extends React.Component {
               type="password"
               placeholder="Password"
               value={password}
+              onKeyPress={this.enterKey.bind(this)}
               onChange={e => this.setState({password: e.target.value})}/>
               <br/>
             <div className='signin-error-field'>
               {this.displayError(this.state.error)}
               <button className="signin-btn btn"
-                onClick={() => {
-                  this.signIn();
-                  this.setState({ email: '', password: '' })
-                }}>
+                      disabled={!this.state.email || !this.state.password}
+                      onClick={() => {
+                        this.signIn();
+                        this.setState({ email: '', password: '' })}}>
                 Sign In
               </button>
             </div>
