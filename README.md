@@ -6,7 +6,7 @@
 * Sass
 * ES6 syntax via babel
 * Webpack
-* Testing w/ enzyme/jasmine/mocha/jest
+* Testing w/ enzyme/jest
 * API built w/ express running on postgress for favorites/user info
 * Loading movie data from https://www.themoviedb.org/ API
 
