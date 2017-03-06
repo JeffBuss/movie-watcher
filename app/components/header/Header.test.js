@@ -68,10 +68,13 @@ describe('components', () => {
     it.skip('should call props.signOutUser and props.clearFavorites if sign out is clicked', () => {
 
       const { Component } = setup({name: 'jeff', localStorage: jest.fn()});
+
       const signOut = Component.find('.sign-up-out-btns')
+
+      expect(signOut.text()).toEqual('Sign Out')
+
       signOut.simulate('click');
 
-      // expect(props.signOutUser).toBeCalled();
       expect(signOut.text()).toEqual('Sign Up')
     })
 
